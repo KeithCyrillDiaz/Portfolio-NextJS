@@ -13,7 +13,7 @@ const SVGComponent: React.FC<SVGComponentProps> = ({
     return(
        <>
          {link === "" ? (
-            <div className="w-7 ">
+            <div className="w-7 md:w-9">
                 {children}
             </div>
         ) : (
@@ -71,3 +71,31 @@ export const HamburgerMenuSVG: React.FC = () => {
         </SVGComponent>
     )
 }
+
+type SVGChildrenProps = {
+    focus?: boolean;
+}
+
+export const HomeSVG: React.FC<SVGChildrenProps> = ({focus}) => {
+   return(
+    <SVGComponent>
+        <svg xmlns="http://www.w3.org/2000/svg" className="w-full h-full" viewBox="0 0 24 24"><path fill={focus ? "#1DB954": "white"} d="M10 20v-6h4v6h5v-8h3L12 3L2 12h3v8z"/></svg>
+    </SVGComponent>
+   )
+}
+
+export const AboutSVG: React.FC<SVGChildrenProps> = ({focus}) => {
+    return(
+     <SVGComponent>
+         <svg xmlns="http://www.w3.org/2000/svg"  className="w-full h-full" viewBox="0 0 256 256"><path fill={focus ? "#1DB954": "white"} d="M230.93 220a8 8 0 0 1-6.93 4H32a8 8 0 0 1-6.92-12c15.23-26.33 38.7-45.21 66.09-54.16a72 72 0 1 1 73.66 0c27.39 8.95 50.86 27.83 66.09 54.16a8 8 0 0 1 .01 8"/></svg>
+     </SVGComponent>
+    )
+ }
+ 
+ export const ProjectSVG: React.FC<SVGChildrenProps> = ({focus}) => {
+    return(
+     <SVGComponent>
+         <svg xmlns="http://www.w3.org/2000/svg" className="w-full h-full"  viewBox="0 0 24 24"><path fill={focus ? "#1DB954": "white"} d="M13 9V3.5L18.5 9M6 2c-1.11 0-2 .89-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/></svg>
+     </SVGComponent>
+    )
+ }

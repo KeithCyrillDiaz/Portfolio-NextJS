@@ -12,7 +12,7 @@ const config: Config = {
         background: "#000000",
         defaultGreen: "#1DB954",
         defaultGray: "#1B1A1A",
-        defaultDarkerGray: "#2E2E2E"
+        defaultDarkerGray: "#161515"
       },
       fontFamily: {
         montserrat: ['Montserrat', 'sans-serif']
