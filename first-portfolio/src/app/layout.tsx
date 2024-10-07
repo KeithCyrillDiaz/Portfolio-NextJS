@@ -15,9 +15,15 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
   title: "Keith Diaz Portfolio",
-  description: "Hi, I made this portfolio to showcase my skills as a junior developer",
-  keywords: "Keith Cyrill A. Diaz, portfolio, web developer, Next.js, JavaScript, TypeScript",
+  description: "Keith Diaz - A passionate Full Stack Developer specializing in JavaScript and TypeScript frameworks.",
+  keywords: "Keith Diaz, Keith Cyrill Diaz, Full Stack Developer, JavaScript, TypeScript, Portfolio",
   authors: [{ name: "Keith Diaz", url: "https://keithdiaz.vercel.app/" }],
+  openGraph: {
+    url: "https://keithdiaz.vercel.app/",
+    title: "Keith Diaz - Portfolio",
+    description: "Keith Diaz - A passionate Full Stack Developer specializing in JavaScript and TypeScript frameworks.",
+    siteName: "Keith Diaz Portfolio",
+  },
 };
 
 export default function RootLayout({
