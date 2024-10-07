@@ -15,8 +15,8 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
   title: "Keith Diaz Portfolio",
-  description: "Welcome to Keith Diaz's portfolio showcasing web development projects and skills.",
-  keywords: "Keith Diaz, portfolio, web developer, Next.js, JavaScript, TypeScript",
+  description: "Hi, I made this portfolio to showcase my skills as a junior developer",
+  keywords: "Keith Cyrill A. Diaz, portfolio, web developer, Next.js, JavaScript, TypeScript",
   authors: [{ name: "Keith Diaz", url: "https://keithdiaz.vercel.app/" }],
 };
 
