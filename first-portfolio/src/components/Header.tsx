@@ -39,9 +39,9 @@ export const Header: React.FC<HeaderProps> = ({
                 ) : (
                      /* this will show if the screen is in dest */
                      <div className="space-x-16 ml-24">
-                        <ButtonTabs onClick={() => router.push('/Home')} focus={focus === "Home"}>Home</ButtonTabs>
-                        <ButtonTabs onClick={() => router.push('/About')} focus={focus === "About"}>About</ButtonTabs>
-                        <ButtonTabs onClick={() => router.push('/Projects')} focus={focus === "Projects"}>Projects</ButtonTabs>
+                        <ButtonTabs onClick={() => router.push('/home')} focus={focus === "Home"}>Home</ButtonTabs>
+                        <ButtonTabs onClick={() => router.push('/about')} focus={focus === "About"}>About</ButtonTabs>
+                        <ButtonTabs onClick={() => router.push('/projects')} focus={focus === "Projects"}>Projects</ButtonTabs>
                     </div>
                 )
                 }
