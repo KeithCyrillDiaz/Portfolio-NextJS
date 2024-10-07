@@ -16,13 +16,13 @@ export const Header: React.FC<HeaderProps> = ({
 }) => {
 
     const router = useRouter(); 
-    const [isMobile, setIsMobile] = useState<boolean>(window.innerWidth < 768);
+    const [isMobile, setIsMobile] = useState<boolean>(false);
 
     useEffect(() => {
         const handleResize = () => {
             setIsMobile(window.innerWidth < 768);
         };
-
+        handleResize();
         window.addEventListener('resize', handleResize);
         return () => {
             window.removeEventListener('resize', handleResize);
@@ -33,7 +33,7 @@ export const Header: React.FC<HeaderProps> = ({
     return (
         <>
             <div className="border-b-4 border-b-defaultGreen py-4 justify-between flex flex-row px-2">
-                {window.innerWidth < 768 ? (
+                {isMobile ? (
                      /* this will show if the screen is small */
                      <BurgerMenu/>
                 ) : (
