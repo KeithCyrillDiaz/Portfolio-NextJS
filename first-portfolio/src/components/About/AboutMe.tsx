@@ -1,13 +1,13 @@
 "use client"
 import React from "react";
-import { CropImage, ProfileImage } from "../ProfileImage";
+import { CropImage} from "../ProfileImage";
 import { PersonalInformation } from "./PersonalInformation";
 import { useIsMobile } from "@/hooks/useMobileChecker";
 import { LoadingSpinner } from "../Loading";
 
 
 export const AboutMe: React.FC = () => {
-    const {isMobile, isLandscape, status, windowSizeY } = useIsMobile()
+    const {isMobile, isLandscape, status} = useIsMobile()
     const img = process.env.NEXT_PUBLIC_DP_ABOUT_URL
 
     if(status==="loading" || !img){
