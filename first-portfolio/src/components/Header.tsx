@@ -1,10 +1,11 @@
 "use client"; 
 
-import React,  { useState, useEffect } from "react";
+import React,  { useState, useEffect, useRef } from "react";
 import { useRouter } from 'next/navigation'; // Change this import
 import { FacebookSVG, GitHubSVG, LinkedInSVG } from "./Icons";
 import { BurgerButton, Menu } from "./Menu";
 import { LoadingSpinner } from "./Loading";
+import { useIsMobile } from "@/hooks/useMobileChecker";
 
 type HeaderProps = {
     children: React.ReactNode;
@@ -13,45 +14,52 @@ type HeaderProps = {
 }
 
 
-type Status = 'loading' | 'idle' | 'error' | 'success'
-
 export const Header: React.FC<HeaderProps> = ({
     children,
     focus,
 }) => {
 
     const router = useRouter(); 
-    const [isMobile, setIsMobile] = useState<boolean>(false);
+
     const [showMenu, setShowMenu] = useState<boolean>(false)
-    const [status, setStatus] = useState<Status>('loading')
+
+    const menuRef = useRef<HTMLDivElement>(null)
+    const {isMobile, status} = useIsMobile()
 
     useEffect(() => {
-        const handleResize = () => {
-            setIsMobile(window.innerWidth < 768);
-        };
-        handleResize();
-        setStatus("idle");
-        window.addEventListener('resize', handleResize);
-        return () => {
-            window.removeEventListener('resize', handleResize);
-        };
-    }, []);
 
-    if(status === "loading"){
+        if(!showMenu) return // If the menu is closed, exit early
+        const handleClickOutside = (event: MouseEvent) => {
+            if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+                setShowMenu(false); // close the menu if the user clicks outside the menu
+            }
+        };
+        // Attach the event listener when the menu is open
+            window.addEventListener("mousedown", handleClickOutside);
+
+        // Cleanup the event listener when the effect is cleaned up
+        return () => {
+            window.removeEventListener("mousedown", handleClickOutside);
+        };
+
+    }, [showMenu]);
+    
+
+    if(status==="loading"){
         return(
-            <LoadingSpinner className="h-full"/>
+            <LoadingSpinner className="h-[100vh]"/>
         )
     } 
     return (
         <>  
             <HeaderDivider>
-                {showMenu && <Menu onClick={() => setShowMenu(!showMenu)} currentPage = {focus}/>}
+                {showMenu && <Menu ref={menuRef} onClick={() => setShowMenu(!showMenu)} currentPage = {focus}/>}
                 {isMobile ? (
                      /* this will show if the screen is small */
                     <BurgerButton onClick={() => setShowMenu(!showMenu) }/>
                 ) : (
                     /* this will show if the screen is in dest */
-                    <div className="space-x-16 ml-24">
+                    <div className="lg:space-x-16 lg:ml-24 space-x-7 ml-7">
                         <ButtonTabs onClick={() => router.push('/')} focus={focus === "Home"}>Home</ButtonTabs>
                         <ButtonTabs onClick={() => router.push('/about')} focus={focus === "About"}>About</ButtonTabs>
                         <ButtonTabs onClick={() => router.push('/projects')} focus={focus === "Projects"}>Projects</ButtonTabs>
@@ -95,7 +103,7 @@ export const ButtonTabs: React.FC<ButtonTabsProps> = ({
     return (
         <button 
         onClick={onClick} 
-        className={`border-b-2 ${focus ? "border-b-defaultGreen" : "border-b-transparent"} inline-block px-1 font-montserrat text-white font-extrabold text-[17px]`}>
+        className={`border-b-2 ${focus ? "border-b-defaultGreen" : "border-b-transparent"} inline-block px-1 font-montserrat text-white font-extrabold text-[17px] 2xl:text-[24px]`}>
             {children}
         </button>
     )
