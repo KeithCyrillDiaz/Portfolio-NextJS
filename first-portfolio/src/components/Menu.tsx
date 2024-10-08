@@ -6,12 +6,14 @@ import { useRouter } from "next/navigation";
 
 type BurgerButtonProps = {
     onClick: () => void;
+    disabled: boolean;
 }
 export const BurgerButton: React.FC<BurgerButtonProps> = ({
     onClick,
+    disabled
 }) => {
     return(
-        <button onClick={onClick}>
+        <button disabled={disabled} onClick={onClick}>
             <HamburgerMenuSVG/>
         </button>
  
@@ -20,15 +22,15 @@ export const BurgerButton: React.FC<BurgerButtonProps> = ({
 type MenuProps = {
     onClick: () => void;
     currentPage: "Home" | "About" | "Projects";
-    visible: boolean;
-    className?: string
+    className?: string;
+    disabled?: boolean;
 }
 export const Menu = forwardRef<HTMLDivElement, MenuProps>(
     ({ 
         onClick, 
         currentPage, 
-        visible, 
-        className 
+        className,
+        disabled,
 
     }, ref) => {
 
@@ -36,7 +38,7 @@ export const Menu = forwardRef<HTMLDivElement, MenuProps>(
     return (
         <div ref={ref} className={`absolute z-10 bg-defaultGray h-[100vh] w-[60%] left-0 top-0 pt-5 text-white ${className}`}>
             <HeaderDivider className="mx-4 py-[15.5px]">
-                <button onClick={onClick} className="font-montserrat font-extrabold text-[19px] mb-[-12px]">Menu</button>
+                <button disabled={disabled} onClick={onClick} className="font-montserrat font-extrabold text-[19px] mb-[-12px]">Menu</button>
             </HeaderDivider>
             <div className="my-2 flex flex-col space-y-2">
                 <MenuButton focus={currentPage === "Home"} onClick={() => router.push('/')}>Home</MenuButton>

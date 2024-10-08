@@ -8,30 +8,39 @@ import { LoadingSpinner } from "./Loading";
 import { useIsMobile } from "@/hooks/useMobileChecker";
 
 type HeaderProps = {
-    children: React.ReactNode;
     focus: "Home" | "About" | "Projects";
-
 }
 
 
 export const Header: React.FC<HeaderProps> = ({
-    children,
     focus,
 }) => {
 
     const router = useRouter(); 
 
     const [showMenu, setShowMenu] = useState<boolean>(false)
+    const [isAnimationOut, setIsAnimationOut] = useState<boolean>(false)
 
     const menuRef = useRef<HTMLDivElement>(null)
     const {isMobile, status} = useIsMobile()
 
-    useEffect(() => {
+    const menuAnimationDelay = () => {
+        if(showMenu && isAnimationOut)return
+        setIsAnimationOut(true)
+        setTimeout(() => {
+            setShowMenu(false); // Close the menu after 1 second
+        }, 700)
+    }
 
-        if(!showMenu) return // If the menu is closed, exit early
+    useEffect(() => {
+        
+        if(!showMenu) {
+            setIsAnimationOut(false)
+            return 
+        } // If the menu is closed, exit early
         const handleClickOutside = (event: MouseEvent) => {
             if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
-                setShowMenu(false); // close the menu if the user clicks outside the menu
+                menuAnimationDelay();
             }
         };
         // Attach the event listener when the menu is open
@@ -53,10 +62,18 @@ export const Header: React.FC<HeaderProps> = ({
     return (
         <>  
             <HeaderDivider>
-                {showMenu && <Menu ref={menuRef} onClick={() => setShowMenu(!showMenu)} currentPage = {focus}/>}
+            {isMobile && showMenu && (
+                    <Menu
+                        ref={menuRef} 
+                        onClick={() => menuAnimationDelay()} 
+                        currentPage={focus} 
+                        className={`${isAnimationOut? "menu-out-animation opacity-0" : "menu-in-animation"  }`}
+                    />
+                )}
+                
                 {isMobile ? (
                      /* this will show if the screen is small */
-                    <BurgerButton onClick={() => setShowMenu(!showMenu) }/>
+                    <BurgerButton disabled={isAnimationOut} onClick={() => setShowMenu(!showMenu) }/>
                 ) : (
                     /* this will show if the screen is in dest */
                     <div className="lg:space-x-16 lg:ml-24 space-x-7 ml-7">
@@ -72,8 +89,6 @@ export const Header: React.FC<HeaderProps> = ({
                     <LinkedInSVG/>
                 </div>
             </HeaderDivider>
-           
-            <div>{children}</div>
         </>
     )
 }
