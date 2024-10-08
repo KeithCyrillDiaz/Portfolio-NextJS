@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   openGraph: {
     url: "https://keithdiaz.vercel.app/",
     title: "Keith Diaz - Full Stack Developer",
-    description: "Explore the work of Keith Diaz, a MERN Stack Developer from the Philippines. Expertise in JavaScript and TypeScript frameworks.",
+    description: "Explore the work of Keith Diaz, a Full Stack Developer from the Philippines. Expertise in JavaScript and TypeScript frameworks.",
     siteName: "Keith Diaz Portfolio",
     images: [
       {
