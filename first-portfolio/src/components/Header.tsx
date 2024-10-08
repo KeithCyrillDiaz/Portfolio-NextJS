@@ -99,7 +99,7 @@ type HeaderDividerProps = {
 }
 export const HeaderDivider: React.FC<HeaderDividerProps> = ({children, className}) => {
     return (
-        <div className={`  py-4 justify-between flex flex-row px-2 ${className ? className : "border-b-4 border-b-defaultGreen"}`}>
+        <div className={`  py-4  px-2 ${className ? className : "border-b-4 border-b-defaultGreen justify-between flex flex-row"}`}>
             {children}
         </div>
     )

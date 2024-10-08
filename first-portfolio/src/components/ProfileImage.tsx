@@ -9,16 +9,16 @@ type ProfileImageProp = {
     height?: number;
     width?: number;
     className?: string
+    url?: string
 }
 
 export const ProfileImage: React.FC<ProfileImageProp> = ({
     height = 300,
     width = 300,
-    className
+    className,
+    url = process.env.NEXT_PUBLIC_DP_URL
 }) => {
-
-    const img = process.env.NEXT_PUBLIC_DP_URL
-    if(!img) {
+    if(!url) {
         return (
             <LoadingSpinner/>
         )
@@ -30,7 +30,7 @@ export const ProfileImage: React.FC<ProfileImageProp> = ({
             <div className="relative h-full w-full ">
                 <CornerBorderWhite/>
                 <CornerBorderGreen/>
-                <CropImage height={height} width={width}/>
+                <CropImage height={height} width={width} url={url}/>
 
             </div>
         </div>
@@ -40,16 +40,24 @@ export const ProfileImage: React.FC<ProfileImageProp> = ({
  type CropImageProps = {
     height: number;
     width: number;
+    url: string;
+    className?: string;
  }
-const CropImage = ({height, width}: CropImageProps) => {
+export const CropImage: React.FC<CropImageProps> = ({height, width, url, className}) => {
+    
+    if(!url) {
+        return (
+           <LoadingSpinner className="w-[83.5vh] xl:w-[45vh] 2xl:w-[33vh]"/>
+        )
+    }
     return(
         <div className="relative h-[85%] lg:h-[90%]">
             <Image
-            src={`${process.env.NEXT_PUBLIC_DP_URL}`}     
+            src={`${url}`}     
             alt={"Keith Diaz Profile Picture"}
             width={height} 
             height={width}
-            className={`absolute top-3 left-3 object-cover h-full`} 
+            className={`${className ? className : "absolute top-3 left-3 h-full"} object-cover `} 
         />
         </div>
         
