@@ -16,7 +16,7 @@ export const HomePageContent: React.FC = () => {
             {isMobile ? (
                       //mobile view
                     <>
-                        <div className="items-center flex justify-center my-7 ">
+                        <div className="items-center flex justify-center my-7 mt-[30%] ">
                             <ProfileImage height={250} width={250}/>
                         </div>
                             <Information/>
