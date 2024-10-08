@@ -70,7 +70,7 @@ const EducationImages: React.FC = () => {
 export const Education: React.FC = () => {
     return (
         <div className="mt-7">
-            <Title>Education</Title>
+            <Title className="text-defaultGreen">Education</Title>
             <EducationSubTitle/>
 
         </div>

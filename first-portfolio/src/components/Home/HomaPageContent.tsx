@@ -29,7 +29,7 @@ export const HomePageContent: React.FC = () => {
                 </div>  
             ) :  (
                 //desktop view
-                <div className="flex flex-row space-x-48 items-center justify-center pt-12">
+                <div className="flex flex-row space-x-32 items-center justify-center mt-20">
                     <Information/>
                     <ProfileImage 
                     height={windowSizeY < 1600 ? 300 : windowSizeY < 1900 ? 400 : 500} 

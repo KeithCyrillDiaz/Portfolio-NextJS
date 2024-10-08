@@ -37,11 +37,7 @@ export const AboutMe: React.FC = () => {
                     //desktop view
                 <div className="flex flex-row items-center justify-center space-x-20 mt-12">
                     <CropImage className="rounded-[17px] h-full slide-in-from-left" url={`${img}`} height={300} width={300}/>
-                    {/* <ProfileImage 
-                    height={windowSizeY < 1600 ? 300 : windowSizeY < 1900 ? 400 : 450} 
-                    width={windowSizeY < 1600 ? 300 : windowSizeY < 1900 ? 400 : 450}
-                    className="slide-in-from-left"/> */}
-                    <PersonalInformation className="w-[40%]"/>
+                    <PersonalInformation className="w-[50%]"/>
                 </div>
             )}
            
