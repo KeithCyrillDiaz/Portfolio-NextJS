@@ -18,10 +18,10 @@ export const Container: React.FC<ContainerProps> = ({children, className}) => {
     }
     if(!isMobile){
         return (
-            <div className={`bg-black px-8 py-2 md:px-20 md:py-12 lg:h-[100vh] ${className}`}>{children}</div> 
+            <div className={`px-8 py-2 md:px-20 md:py-12 lg:h-[100vh] ${className}`}>{children}</div> 
         )
     } else
     return(
-        <div className={`bg-black px-8 py-2 md:px-20 md:py-12 lg:h-[100vh] h-[100vh] ${className}`}>{children}</div> 
+        <div className={`px-8 pt-2 md:px-20 md:py-12 lg:h-[100vh] ${className}`}>{children}</div> 
     )
 }
