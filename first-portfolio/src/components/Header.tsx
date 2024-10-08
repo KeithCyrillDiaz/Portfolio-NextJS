@@ -1,6 +1,6 @@
 "use client"; 
 
-import React,  { useState, useEffect, useRef } from "react";
+import React,  { useState, useEffect, useRef, useCallback } from "react";
 import { useRouter } from 'next/navigation'; // Change this import
 import { FacebookSVG, GitHubSVG, LinkedInSVG } from "./Icons";
 import { BurgerButton, Menu } from "./Menu";
@@ -24,13 +24,13 @@ export const Header: React.FC<HeaderProps> = ({
     const menuRef = useRef<HTMLDivElement>(null)
     const {isMobile, status} = useIsMobile()
 
-    const menuAnimationDelay = () => {
-        if(showMenu && isAnimationOut)return
-        setIsAnimationOut(true)
+    const menuAnimationDelay = useCallback(() => {
+        if (showMenu && isAnimationOut) return;
+        setIsAnimationOut(true);
         setTimeout(() => {
-            setShowMenu(false); // Close the menu after 1 second
-        }, 700)
-    }
+            setShowMenu(false); // Close the menu after 700ms
+        }, 700);
+    }, [showMenu, isAnimationOut]);
 
     useEffect(() => {
         
@@ -51,7 +51,7 @@ export const Header: React.FC<HeaderProps> = ({
             window.removeEventListener("mousedown", handleClickOutside);
         };
 
-    }, [showMenu]);
+    }, [showMenu, menuAnimationDelay]);
     
 
     if(status==="loading"){

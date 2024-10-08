@@ -22,6 +22,7 @@ export const Education: React.FC = () => {
         <div className="mt-7">
             <Title>Education</Title>
             <EducationSubTitle/>
+            
         </div>
     )
 }
