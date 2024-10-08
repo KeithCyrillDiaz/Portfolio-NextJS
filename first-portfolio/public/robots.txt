@@ -1,2 +1,9 @@
+# *
 User-agent: *
-Disallow:
+Allow: /
+
+# Host
+Host: https://keithdiaz.vercel.app
+
+# Sitemaps
+Sitemap: https://keithdiaz.vercel.app/sitemap.xml
