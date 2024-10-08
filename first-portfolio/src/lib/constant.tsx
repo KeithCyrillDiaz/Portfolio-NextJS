@@ -17,9 +17,9 @@ export const About = {
     Education: {
         courseAndGPA: ["Bachelor of Science in Information System: GPA: ", "1.567"],
         school: "Technological University of the Philippines",
-        bestThesisCOS: ["Awarded" , "Best Thesis", "in College of Science Department"],
-        cumLaude: ["Awarded", "Cum Laude"],
-        bestThesisCourse: ["Awarded" , "Best Thesis", "in Information System "],
+        bestThesisCOS: ["Awarded " , "Best Thesis ", "in College of Science Department"],
+        cumLaude: ["Awarded ", "Cum Laude"],
+        bestThesisCourse: ["Awarded " , "Best Thesis ", "in Information System "],
     },
 
     Experience: {
