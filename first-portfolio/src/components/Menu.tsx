@@ -24,7 +24,7 @@ type MenuProps = {
 export const Menu = forwardRef<HTMLDivElement, MenuProps>(({ onClick, currentPage }, ref) => {
     const router = useRouter();
     return (
-        <div ref={ref} className="bg-defaultGray h-[100vh] w-[60%] left-0 top-0 pt-5 text-white absolute">
+        <div ref={ref} className="absolute z-10 bg-defaultGray h-[100vh] w-[60%] left-0 top-0 pt-5 text-white ">
             <HeaderDivider className="mx-4 py-[15.5px]">
                 <button onClick={onClick} className="font-montserrat font-extrabold text-[19px] mb-[-12px]">Menu</button>
             </HeaderDivider>
