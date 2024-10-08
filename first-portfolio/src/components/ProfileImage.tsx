@@ -1,18 +1,20 @@
 import Image from "next/image";
 import React from "react";
 import dotenv from 'dotenv'
-import { LoadingSpinner } from "../Loading";
+import { LoadingSpinner } from "./Loading";
 
 dotenv.config();
 
 type ProfileImageProp = {
     height?: number;
     width?: number;
+    className?: string
 }
 
 export const ProfileImage: React.FC<ProfileImageProp> = ({
-    height = 400,
-    width = 400
+    height = 300,
+    width = 300,
+    className
 }) => {
 
     const img = process.env.NEXT_PUBLIC_DP_URL
@@ -22,7 +24,7 @@ export const ProfileImage: React.FC<ProfileImageProp> = ({
         )
     }
     return(
-        <div className="slide-in-from-right"
+        <div className={` ${className ? className : "slide-in-from-right"}`}
         style={{ height: `${height + 35}px`, width: `${width + 35}px` }}
         >
             <div className="relative h-full w-full ">

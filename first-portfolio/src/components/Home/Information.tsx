@@ -12,7 +12,7 @@ export const Information: React.FC = () => {
             <SubTitle>Full Stack Developer | Mobile & Web Developer</SubTitle>
             <SubInfo>Passionate <span className="text-defaultGreen font-bold">Developer</span> from the Philippines</SubInfo>
             <div className="flex flex-row gap-2 mt-4">
-                <Button handleClick={() => {}}className="bg-defaultGreen text-white">
+                <Button className="bg-defaultGreen text-white hover:bg-green-700">
                     <a
                         href={`mailto:${process.env.NEXT_PUBLIC_EMAIL}`}
                         target="_blank"
@@ -21,7 +21,7 @@ export const Information: React.FC = () => {
                         Send Email
                     </a>
                 </Button>
-                <Button className="bg-defaultGray text-white"> <a
+                <Button className="bg-defaultGray text-white hover:bg-defaultDarkerGray"> <a
                     href={process.env.NEXT_PUBLIC_RESUME_URL}
                     download="Keith_Diaz_Resume.pdf" 
                     target="_blank"
@@ -45,7 +45,7 @@ type TitleProps = {
 }
 export const Title: React.FC<TitleProps> = ({children, className}) => {
     return(
-        <div className={`inline-block text-white font-montserrat font-extrabold text-[30px] 2xl:text-[50px] ${className}`}>{children}</div>
+        <div className={`${className ? className : "text-white"} inline-block font-montserrat font-extrabold text-[30px] 2xl:text-[50px]`}>{children}</div>
     )
 }
 
