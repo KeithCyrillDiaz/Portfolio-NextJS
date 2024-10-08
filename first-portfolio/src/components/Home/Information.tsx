@@ -7,7 +7,7 @@ import { Button } from "../Button";
 
 export const Information: React.FC = () => {
     return(
-        <div className="flex flex-col">
+        <div className="flex flex-col slide-in-from-bottom">
             <Title>Keith Diaz</Title>
             <SubTitle>Full Stack Developer | Mobile & Web Developer</SubTitle>
             <SubInfo>Passionate <span className="text-defaultGreen font-bold">Developer</span> from the Philippines</SubInfo>
