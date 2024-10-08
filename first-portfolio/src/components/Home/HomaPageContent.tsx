@@ -2,7 +2,7 @@
 import { useIsMobile } from "@/hooks/useMobileChecker";
 import React from "react";
 import { Information } from "./Information";
-import { ProfileImage } from "./ProfileImage";
+import { ProfileImage } from "../ProfileImage";
 
 
 export const HomePageContent: React.FC = () => {
@@ -23,7 +23,7 @@ export const HomePageContent: React.FC = () => {
                     </>
             )  : isLandscape ? (
                 //landscape mobile
-                <div className="flex flex-row space-x-7 items-center justify-center">
+                <div className="flex flex-row space-x-7 items-center justify-center mt-7">
                     <Information/>
                     <ProfileImage height={200} width={200}/>
                 </div>  
@@ -42,3 +42,4 @@ export const HomePageContent: React.FC = () => {
         </>
     )
 }
+
