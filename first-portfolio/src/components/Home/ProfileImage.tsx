@@ -1,32 +1,47 @@
 import Image from "next/image";
 import React from "react";
+import dotenv from 'dotenv'
+
+dotenv.config();
 
 type ProfileImageProp = {
-    className?: string;
     height?: number;
     width?: number;
 }
 
 export const ProfileImage: React.FC<ProfileImageProp> = ({
-    className,
     height = 400,
     width = 400
 }) => {
     return(
-        <div style={{ height: `${height + 35}px`, width: `${width + 35}px` }}>
-            <div className="relative h-full w-full">
+        <div style={{ height: `${height + 35}px`, width: `${width + 35}px` }}
+        >
+            <div className="relative h-full w-full ">
                 <CornerBorderWhite/>
                 <CornerBorderGreen/>
-                <Image
-                    src={"https://2.img-dpreview.com/files/p/E~C1000x0S4000x4000T1200x1200~articles/3925134721/0266554465.jpeg"}     
-                    alt={"Keith Diaz Profile Picture"}       
-                    width={width}         
-                    height={height}        
-                    className={`absolute top-3 left-3`} 
-                />
+                <CropImage height={height} width={width}/>
+
             </div>
         </div>
        
+    )
+}
+ type CropImageProps = {
+    height: number;
+    width: number;
+ }
+const CropImage = ({height, width}: CropImageProps) => {
+    return(
+        <div className="relative h-[85%] lg:h-[90%]">
+            <Image
+            src={`${process.env.NEXT_PUBLIC_DP_URL}`}     
+            alt={"Keith Diaz Profile Picture"}
+            width={height} 
+            height={width}
+            className={`absolute top-3 left-3 object-cover h-full`} 
+        />
+        </div>
+        
     )
 }
 
