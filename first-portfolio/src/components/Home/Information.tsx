@@ -9,7 +9,7 @@ export const Information: React.FC = () => {
     return(
         <div className="flex flex-col">
             <Title>Keith Diaz</Title>
-            <SubTitle>MERN Stack Developer | Mobile & Web Developer</SubTitle>
+            <SubTitle>Full Stack Developer | Mobile & Web Developer</SubTitle>
             <SubInfo>Passionate <span className="text-defaultGreen font-bold">Developer</span> from the Philippines</SubInfo>
             <div className="flex flex-row gap-2 mt-4">
                 <Button handleClick={() => {}}className="bg-defaultGreen text-white">
