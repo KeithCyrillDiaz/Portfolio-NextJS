@@ -7,7 +7,7 @@ import { HomePageContent } from "@/components/Home/HomaPageContent";
 export default function Home() {
   return (
       <BackgroundColor>
-         <Container>
+         <Container className="h-[100vh]">
             <Header focus="Home"/>
             <HomePageContent/>
         </Container>

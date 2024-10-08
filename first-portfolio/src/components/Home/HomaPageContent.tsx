@@ -16,7 +16,7 @@ export const HomePageContent: React.FC = () => {
             {isMobile ? (
                       //mobile view
                     <>
-                        <div className="items-center flex justify-center my-7 ">
+                        <div className="items-center flex justify-center my-7 mt-20 ">
                             <ProfileImage height={250} width={250}/>
                         </div>
                             <Information/>
@@ -29,7 +29,7 @@ export const HomePageContent: React.FC = () => {
                 </div>  
             ) :  (
                 //desktop view
-                <div className="flex flex-row space-x-48 items-center justify-center pt-12">
+                <div className="flex flex-row space-x-32 items-center justify-center mt-20">
                     <Information/>
                     <ProfileImage 
                     height={windowSizeY < 1600 ? 300 : windowSizeY < 1900 ? 400 : 500} 

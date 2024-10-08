@@ -45,7 +45,7 @@ type TitleProps = {
 }
 export const Title: React.FC<TitleProps> = ({children, className}) => {
     return(
-        <div className={`${className ? className : "text-white"} inline-block font-montserrat font-extrabold text-[30px] 2xl:text-[50px]`}>{children}</div>
+        <div className={`${className ? className : "text-white"} inline-block font-montserrat font-extrabold text-[30px] xl:text-[40px] 2xl:text-[50px]`}>{children}</div>
     )
 }
 
