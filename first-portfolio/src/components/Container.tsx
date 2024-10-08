@@ -12,10 +12,6 @@ type ContainerProps = {
 
 export const Container: React.FC<ContainerProps> = ({children, className}) => {
     const {isMobile, status} = useIsMobile()
-
-    if(status === "loading") {
-        return <LoadingSpinner className="h-[100vh]"/>
-    }
     if(!isMobile){
         return (
             <div className={`px-8 py-2 md:px-20 md:py-12 lg:h-[100vh] ${className}`}>{children}</div> 
