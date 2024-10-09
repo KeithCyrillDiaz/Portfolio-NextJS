@@ -1,4 +1,41 @@
-export const About = {
+
+export type SkillLevel = "Intermediate" | "Beginner" | "Novice";
+
+interface TechnicalSkill {
+    title: string;
+    url: string | undefined;
+    Level: SkillLevel;
+    Experience: string;
+    Rating: number
+}
+
+type AboutTypes = {
+    PersonalInformation: {
+        title: string;
+        firstParagpraph: string[];
+        contactNumber: string;
+        email: string;
+        address: string;
+        lastParagraph: string;
+    };
+    Education: {
+        courseAndGPA: string[];
+        school: string;
+        bestThesisCOS: string[];
+        cumLaude: string[];
+        bestThesisCourse: string[];
+    };
+    Experience: {
+        date: string;
+        company: string;
+        role: string;
+        bullets: string[];
+    };
+    TechnicalSkills: TechnicalSkill[];
+}
+
+
+export const About: AboutTypes = {
     PersonalInformation: {
         title: "Keith Cyrill A. Diaz",
         firstParagpraph: [
@@ -31,7 +68,76 @@ export const About = {
 
             "Utilized React with TypeScript, integrating React Hooks and custom components to build dynamic and responsive web applications."
         ]
-    }
+    },
+
+    TechnicalSkills: [
+        {
+            title: "TypeScript",
+            url: process.env.NEXT_PUBLIC_TS,
+            Level: "Intermediate",
+            Experience: "6 months",
+            Rating: 75
+        },
+        
+        {
+            title: "HTML",
+            url: process.env.NEXT_PUBLIC_HTML,
+            Level: "Intermediate",
+            Experience: "8 months",
+            Rating: 75
+            
+        },
+        {
+            title: "Tailwind",
+            url: process.env.NEXT_PUBLIC_TAILWIND,
+            Level: "Beginner",
+            Experience: "3 months",
+            Rating: 60
+        },
+       
+        {
+            title: "React.js",
+            url: process.env.NEXT_PUBLIC_REACT,
+            Level: "Beginner",
+            Experience: "3 months",
+            Rating: 70
+        },
+        {
+            title: "Next.js",
+            url: process.env.NEXT_PUBLIC_NEXT,
+            Level: "Novice",
+            Experience: "1 month",
+            Rating: 70
+        },
+         {
+            title: "JavaScript",
+            url: process.env.NEXT_PUBLIC_JS,
+            Level: "Intermediate",
+            Experience: "6 months",
+            Rating: 70
+        },
+        {
+            title: "Node.js",
+            url: process.env.NEXT_PUBLIC_NODE,
+            Level: "Intermediate",
+            Experience: "6 months",
+            Rating: 70
+        },
+        {
+            title: "Express.js",
+            url: process.env.NEXT_PUBLIC_EXPRESS,
+            Level: "Intermediate",
+            Experience: "6 months",
+            Rating: 70
+        },
+        {
+            title: "React Native",
+            url: process.env.NEXT_PUBLIC_NATIVE,
+            Level: "Intermediate",
+            Experience: "6 months",
+            Rating: 70
+        },
+    ]
 
 }
 
