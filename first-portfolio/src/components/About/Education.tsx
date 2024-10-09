@@ -69,7 +69,7 @@ const EducationImages: React.FC = () => {
 
 export const Education: React.FC = () => {
     return (
-        <div className="mt-7">
+        <div className="mt-7 slide-in-from-bottom">
             <Title className="text-defaultGreen">Education</Title>
             <EducationSubTitle/>
 

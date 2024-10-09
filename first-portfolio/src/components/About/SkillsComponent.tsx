@@ -118,7 +118,7 @@ export const SkillsComponent: React.FC = () => {
         )
     }
     return(
-       <>
+       <div className="fade-in">
         {isMobile ? (
              <>
              {TechnicalSkills.map((item, index) => (
@@ -159,7 +159,7 @@ export const SkillsComponent: React.FC = () => {
                     
                 </div>
         )}
-       </>
+       </div>
        
     )
 }
