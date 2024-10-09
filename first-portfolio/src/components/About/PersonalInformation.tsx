@@ -74,7 +74,6 @@ export const PersonalInformation: React.FC<PersonalInformationProps> = ({
             </Paragraph>
             <PersonalDetails/>
             <Paragraph>{lastParagraph}</Paragraph>
-
         </div>
 
     )

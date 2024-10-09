@@ -51,7 +51,7 @@ export const CropImage: React.FC<CropImageProps> = ({height, width, url, classNa
         )
     }
     return(
-        <div className="relative h-[85%] lg:h-[90%]">
+        <div className="relative h-[85%] sm:h-[100%] lg:h-[100%]">
             <Image
             src={`${url}`}     
             alt={"Keith Diaz Profile Picture"}
