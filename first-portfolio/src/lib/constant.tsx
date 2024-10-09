@@ -1,7 +1,7 @@
 
 export type SkillLevel = "Intermediate" | "Beginner" | "Novice";
 
-interface TechnicalSkill {
+export type TechnicalSkillTypes = {
     title: string;
     url: string | undefined;
     Level: SkillLevel;
@@ -31,7 +31,7 @@ type AboutTypes = {
         role: string;
         bullets: string[];
     };
-    TechnicalSkills: TechnicalSkill[];
+    TechnicalSkills: TechnicalSkillTypes[];
 }
 
 
