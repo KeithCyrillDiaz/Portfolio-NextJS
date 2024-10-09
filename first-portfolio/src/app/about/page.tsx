@@ -8,7 +8,7 @@ import React from 'react'
 
 export default function About() {
   return (
-    <BackgroundColor className='xs:h-[100vh]'>
+    <BackgroundColor>
        <Container>
         <Header focus='About'/>
         <AboutMe/>

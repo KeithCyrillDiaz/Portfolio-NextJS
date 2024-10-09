@@ -58,6 +58,9 @@ export const CropImage: React.FC<CropImageProps> = ({height, width, url, classNa
             width={height} 
             height={width}
             className={`${className ? className : "absolute top-3 left-3 h-full"} object-cover `} 
+            style={{ width: width, height: height }} // to remove warnings and nsure it scales proportionally
+            priority // Add this to improve load time for above-the-fold images 
+
         />
         </div>
         
