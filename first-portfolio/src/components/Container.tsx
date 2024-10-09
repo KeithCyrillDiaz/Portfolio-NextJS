@@ -17,7 +17,7 @@ export const Container: React.FC<ContainerProps> = ({children, className}) => {
         )
     } else if(isLandscape){
         return(
-            <div className={`px-12 pt-2 lg:h-[100vh] ${className}`}>{children}</div> 
+            <div className={`px-12 pt-2 ${className}`}>{children}</div> 
         )
     } else {
         return (

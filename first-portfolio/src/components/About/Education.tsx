@@ -40,7 +40,7 @@ const EducationImageContainer: React.FC<EducationImageContainerProps> = ({
     }
     return(
         <div className="flex flex-col gap-4 items-center my-4 sm:w-[300px] xl:w-[300px] xl:h-[200px] fade-in">
-            <CropImage className="rounded-[7px] h-[170px]" url={`${url}`} height={300} width={300}/>
+            <CropImage className="rounded-[7px]" url={`${url}`} height={170} width={270}/>
             <div className="text-white font-extrabold text-[14px] font-montserrat text-center">{children}</div>
         </div>
     )
