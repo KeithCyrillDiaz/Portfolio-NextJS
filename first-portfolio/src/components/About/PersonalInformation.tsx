@@ -5,7 +5,7 @@ import { AboutData } from "@/lib/constant";
 import { AddressSVG, EmailSVG, PhoneSVG } from "../Icons";
 
 
-const Paragraph: React.FC<ChildrenClassNameProps> = ({
+export const Paragraph: React.FC<ChildrenClassNameProps> = ({
     children,
     className
 }) => {
