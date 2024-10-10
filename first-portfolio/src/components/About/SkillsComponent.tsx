@@ -1,9 +1,9 @@
 
 "use client"
 
-import { About, SkillLevel, TechnicalSkillTypes } from "@/lib/constant";
+import { AboutData, SkillLevel, TechnicalSkillTypes } from "@/lib/constant";
 import React from "react";
-import { BoxWithLogo } from "../LogoWithBox";
+import { BoxWithLogo } from "../BoxWithLogo";
 import { useIsMobile } from "@/hooks/useMobileChecker";
 import { LoadingSpinner } from "../Loading";
 import { getSecondHalfItems, isFirstHalf } from "@/lib/helpers";
@@ -109,7 +109,7 @@ const SkillCard: React.FC<SkillCardProp> = ({item, isDesktop}) => {
 }
 
 export const SkillsComponent: React.FC = () => {
-    const {TechnicalSkills} = About
+    const {TechnicalSkills} = AboutData
     const {isMobile, isLandscape, status} = useIsMobile()
 
     if(status === "loading") {
