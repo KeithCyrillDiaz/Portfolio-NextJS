@@ -3,11 +3,11 @@
 import React from "react";
 import { Title } from "../Home/Information";
 import { H2 } from "../H2";
-import { About } from "@/lib/constant";
+import { AboutData } from "@/lib/constant";
 import { CropImage } from "../ProfileImage";
 import { LoadingSpinner } from "../Loading";
 
-const {courseAndGPA, school, cumLaude, bestThesisCOS, bestThesisCourse} = About.Education
+const {courseAndGPA, school, cumLaude, bestThesisCOS, bestThesisCourse} = AboutData.Education
 const CumLaudeImage = process.env.NEXT_PUBLIC_CUM_LAUDE;
 const BestThesisCourse = process.env.NEXT_PUBLIC_COURSE;
 const BestThesisDepartment = process.env.NEXT_PUBLIC_COS;

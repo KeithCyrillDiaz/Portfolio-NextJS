@@ -9,6 +9,12 @@ export type TechnicalSkillTypes = {
     Rating: number
 }
 
+export type HobbiesCardTypes = {
+    title: string;
+    url: string | undefined;
+}
+
+
 type AboutTypes = {
     PersonalInformation: {
         title: string;
@@ -31,11 +37,12 @@ type AboutTypes = {
         role: string;
         bullets: string[];
     };
-    TechnicalSkills: TechnicalSkillTypes[];
+    TechnicalSkills: TechnicalSkillTypes[],
+    Hobbies: HobbiesCardTypes[];
 }
 
 
-export const About: AboutTypes = {
+export const AboutData: AboutTypes = {
     PersonalInformation: {
         title: "Keith Cyrill A. Diaz",
         firstParagpraph: [
@@ -137,6 +144,46 @@ export const About: AboutTypes = {
             Experience: "6 months",
             Rating: 70
         },
+    ],
+
+    Hobbies: [
+        {
+            title: "Valorant",
+            url: process.env.NEXT_PUBLIC_VALORANT,
+        },
+        {
+            title: "Mobile Legends",
+            url: process.env.NEXT_PUBLIC_MOBILE_LEGENDS,
+        },
+        {
+            title: "Genshin Impact",
+            url: process.env.NEXT_PUBLIC_GENSHIN_IMAPACT,
+        },
+        {
+            title: "Tiktok",
+            url: process.env.NEXT_PUBLIC_TIKTOK,
+        },
+        {
+            title: "Yotube",
+            url: process.env.NEXT_PUBLIC_YOUTUBE,
+        },
+        {
+            title: "Facebook",
+            url: process.env.NEXT_PUBLIC_FACEBOOK,
+        },
+        {
+            title: "Spotify",
+            url: process.env.NEXT_PUBLIC_SPOTIFY,
+        },
+        {
+            title: "Discord",
+            url: process.env.NEXT_PUBLIC_DISCORD,
+        },
+        {
+            title: "Netflix",
+            url: process.env.NEXT_PUBLIC_NETFLIX,
+        },
+
     ]
 
 }
