@@ -1,5 +1,6 @@
 import { AboutMe } from '@/components/About/AboutMe'
 import { Education } from '@/components/About/Education'
+import { Experience } from '@/components/About/Experience'
 import { Hobbies } from '@/components/About/Hobbies'
 import { TechnicalSkills } from '@/components/About/TechnicalSkills'
 import { BackgroundColor } from '@/components/BackgroundColor'
@@ -16,6 +17,7 @@ export default function About() {
         <AboutMe/>
         <Education/>
         <TechnicalSkills/>
+        <Experience/>
         <Hobbies/>
         <Footer/>
       </Container>

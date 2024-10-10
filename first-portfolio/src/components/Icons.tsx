@@ -4,11 +4,12 @@ import Link from 'next/link';
 type SVGComponentProps = {
     link?: string;
     children:  React.ReactNode;
+    className?: string;
 }
 
 const SVGComponent: React.FC<SVGComponentProps> = ({
     link = "",
-    children
+    children,
 }) => {
     return(
        <>
@@ -122,6 +123,17 @@ export const AboutSVG: React.FC<SVGChildrenProps> = ({focus}) => {
     return(
         <SVGComponent>
            <svg xmlns="http://www.w3.org/2000/svg" className="w-full h-full" viewBox="0 0 24 24"><path fill="#1DB954" d="M12 11.5A2.5 2.5 0 0 1 9.5 9A2.5 2.5 0 0 1 12 6.5A2.5 2.5 0 0 1 14.5 9a2.5 2.5 0 0 1-2.5 2.5M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7"/></svg>
+        </SVGComponent>
+    )
+ }
+
+type  CircleSVGProps = {
+    className?: string;
+}
+ export const CircleSVG: React.FC<CircleSVGProps> = ({className}) => {
+    return (
+        <SVGComponent>
+            <svg xmlns="http://www.w3.org/2000/svg" className={`${className ?? "w-[30%] h-[30%]"}`} viewBox="0 0 24 24"><path fill="#1DB954" d="M12 22q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22"/></svg>
         </SVGComponent>
     )
  }

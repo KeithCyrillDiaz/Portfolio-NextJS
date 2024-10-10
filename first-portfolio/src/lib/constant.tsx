@@ -1,3 +1,4 @@
+import { dateTypes } from "./types";
 
 export type SkillLevel = "Intermediate" | "Beginner" | "Novice";
 
@@ -7,6 +8,15 @@ export type TechnicalSkillTypes = {
     Level: SkillLevel;
     Experience: string;
     Rating: number
+}
+
+export type ExperienceTypes = {
+    startingMonth: dateTypes;
+    endingMonth: dateTypes;
+    year: number;
+    company: string;
+    role: string;
+    bulletsData: string[];
 }
 
 export type HobbiesCardTypes = {
@@ -31,12 +41,7 @@ type AboutTypes = {
         cumLaude: string[];
         bestThesisCourse: string[];
     };
-    Experience: {
-        date: string;
-        company: string;
-        role: string;
-        bullets: string[];
-    };
+    Experience: ExperienceTypes[],
     TechnicalSkills: TechnicalSkillTypes[],
     Hobbies: HobbiesCardTypes[];
 }
@@ -66,16 +71,20 @@ export const AboutData: AboutTypes = {
         bestThesisCourse: ["Awarded " , "Best Thesis ", "in Information System "],
     },
 
-    Experience: {
-        date: "March-June 2024",
-        company: "Service Economy Applications INC – Alabang, Muntinlupa",
-        role: "Software Developer Intern",
-        bullets: [
-            "Developed and maintained backend services using Node.js and Express with TypeScript, implementing RESTful APIs, token-based authentication, and middleware for enhanced security and functionality.",
-
-            "Utilized React with TypeScript, integrating React Hooks and custom components to build dynamic and responsive web applications."
-        ]
-    },
+    Experience: [
+        {
+            startingMonth: "March",
+            endingMonth: "June",
+            year: 2024,
+            company: "Service Economy Applications INC – Alabang, Muntinlupa",
+            role: "Software Developer Intern",
+            bulletsData: [
+                "Developed and maintained backend services using Node.js and Express with TypeScript, implementing RESTful APIs, token-based authentication, and middleware for enhanced security and functionality.",
+    
+                "Utilized React with TypeScript, integrating React Hooks and custom components to build dynamic and responsive web applications."
+            ]
+        },
+    ],
 
     TechnicalSkills: [
         {
