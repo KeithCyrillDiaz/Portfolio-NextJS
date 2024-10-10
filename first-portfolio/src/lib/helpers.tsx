@@ -10,3 +10,7 @@ export const getSecondHalfItems = (index: number, items: TechnicalSkillTypes[] )
     const secondHalfIndex = index + Math.floor(items.length / 2);
     return items[secondHalfIndex];
 }
+
+export const validateYear = (year: number) => {
+    return year > 2023;
+}
