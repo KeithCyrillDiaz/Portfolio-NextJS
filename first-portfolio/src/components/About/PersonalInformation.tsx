@@ -1,11 +1,11 @@
 import { ChildrenClassNameProps } from "@/lib/types";
 import React from "react";
 import { Title } from "../Home/Information";
-import { About } from "@/lib/constant";
+import { AboutData } from "@/lib/constant";
 import { AddressSVG, EmailSVG, PhoneSVG } from "../Icons";
 
 
-const Paragraph: React.FC<ChildrenClassNameProps> = ({
+export const Paragraph: React.FC<ChildrenClassNameProps> = ({
     children,
     className
 }) => {
@@ -37,7 +37,7 @@ const DetailsContainer: React.FC<DetailsContainerProps> = ({
 }
 
 const PersonalDetails: React.FC= () => {
-    const {email, contactNumber, address} = About.PersonalInformation
+    const {email, contactNumber, address} = AboutData.PersonalInformation
     return(
         <div 
         className="my-2 mx-4"
@@ -61,7 +61,7 @@ export const PersonalInformation: React.FC<PersonalInformationProps> = ({
         firstParagpraph, 
         title, 
         lastParagraph,
-    } = About.PersonalInformation;
+    } = AboutData.PersonalInformation;
     return (
         <div className={`${className ? className : "w-[320px]"} flex flex-col slide-in-from-bottom`}>
             <Title className="text-defaultGreen xl:text-[35px]">{title}</Title>

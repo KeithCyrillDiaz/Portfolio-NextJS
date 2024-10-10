@@ -1,9 +1,9 @@
 
 "use client"
 
-import { About, SkillLevel, TechnicalSkillTypes } from "@/lib/constant";
+import { AboutData, SkillLevel, TechnicalSkillTypes } from "@/lib/constant";
 import React from "react";
-import { BoxWithLogo } from "../LogoWithBox";
+import { BoxWithLogo } from "../BoxWithLogo";
 import { useIsMobile } from "@/hooks/useMobileChecker";
 import { LoadingSpinner } from "../Loading";
 import { getSecondHalfItems, isFirstHalf } from "@/lib/helpers";
@@ -42,7 +42,7 @@ const SkillsInfo: React.FC<SkillsInfoProps> = ({
     experience,
 }) => {
     return (
-        <div className=" flex flex-col text-white text-[11px] xl:text-[12px] font-extrabold font-montserrat">
+        <div className=" flex flex-col text-white text-[11px] xl:text-[12px] 2xl:text-[14px] font-extrabold font-montserrat w-full">
             <div className="flex gap-2 items-center">
              Level: <span className="text-defaultGreen">{level}</span>
             </div>
@@ -55,7 +55,7 @@ const SkillsInfo: React.FC<SkillsInfoProps> = ({
 
 const RatingPercentage: React.FC<ChildrenProps> = ({children}) => {
     return (
-        <div className="absolute right-0 bottom-3 xl:bottom-4 text-white font-montserrat text-[11px] xl:text-[12px] font-extrabold">
+        <div className="absolute right-0 bottom-3 xl:bottom-4 text-white font-montserrat text-[11px] xl:text-[12px] 2xl:text-[14px] font-extrabold">
             {children}
     </div>
     )
@@ -67,7 +67,7 @@ type SkillRatingProps = {
 
 const SkillRatingBar: React.FC<SkillRatingProps> = ({rating}) => {
     return(
-        <div className="text-white font-montserrat text-[11px] xl:text-[12px] font-extrabold flex flex-col gap-1">
+        <div className="text-white font-montserrat text-[11px] xl:text-[12px] 2xl:text-[14px] font-extrabold flex flex-col gap-1">
         Skill Rating: 
         <RatingBar progress={rating}/>
         </div>
@@ -109,7 +109,7 @@ const SkillCard: React.FC<SkillCardProp> = ({item, isDesktop}) => {
 }
 
 export const SkillsComponent: React.FC = () => {
-    const {TechnicalSkills} = About
+    const {TechnicalSkills} = AboutData
     const {isMobile, isLandscape, status} = useIsMobile()
 
     if(status === "loading") {
@@ -122,7 +122,7 @@ export const SkillsComponent: React.FC = () => {
         {isMobile ? (
              <>
              {TechnicalSkills.map((item, index) => (
-                 <div key={index} className="flex flex-row items-center gap-4">
+                 <div key={index} className="flex flex-row items-center gap-4 justify-center">
                     {isFirstHalf(index, TechnicalSkills.length)&& (
                         <div className="flex flex-col w-[170px] relative my-2">
                          <SkillCard item={item}/>   
@@ -152,7 +152,7 @@ export const SkillsComponent: React.FC = () => {
         ) : (
             <div className="flex flex-wrap gap-x-4 items-center justify-center">
                     {TechnicalSkills.map((item, index) => (
-                        <div key={index} className="flex flex-col relative">
+                        <div key={index} className="flex flex-col relative ">
                             <SkillCard item={item} isDesktop/>
                         </div>
                     ))}

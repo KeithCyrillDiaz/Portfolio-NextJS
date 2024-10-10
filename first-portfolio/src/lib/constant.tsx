@@ -1,3 +1,4 @@
+import { dateTypes } from "./types";
 
 export type SkillLevel = "Intermediate" | "Beginner" | "Novice";
 
@@ -8,6 +9,21 @@ export type TechnicalSkillTypes = {
     Experience: string;
     Rating: number
 }
+
+export type ExperienceTypes = {
+    startingMonth: dateTypes;
+    endingMonth: dateTypes;
+    year: number;
+    company: string;
+    role: string;
+    bulletsData: string[];
+}
+
+export type HobbiesCardTypes = {
+    title: string;
+    url: string | undefined;
+}
+
 
 type AboutTypes = {
     PersonalInformation: {
@@ -25,17 +41,13 @@ type AboutTypes = {
         cumLaude: string[];
         bestThesisCourse: string[];
     };
-    Experience: {
-        date: string;
-        company: string;
-        role: string;
-        bullets: string[];
-    };
-    TechnicalSkills: TechnicalSkillTypes[];
+    Experience: ExperienceTypes[],
+    TechnicalSkills: TechnicalSkillTypes[],
+    Hobbies: HobbiesCardTypes[];
 }
 
 
-export const About: AboutTypes = {
+export const AboutData: AboutTypes = {
     PersonalInformation: {
         title: "Keith Cyrill A. Diaz",
         firstParagpraph: [
@@ -59,16 +71,20 @@ export const About: AboutTypes = {
         bestThesisCourse: ["Awarded " , "Best Thesis ", "in Information System "],
     },
 
-    Experience: {
-        date: "March-June 2024",
-        company: "Service Economy Applications INC – Alabang, Muntinlupa",
-        role: "Software Developer Intern",
-        bullets: [
-            "Developed and maintained backend services using Node.js and Express with TypeScript, implementing RESTful APIs, token-based authentication, and middleware for enhanced security and functionality.",
-
-            "Utilized React with TypeScript, integrating React Hooks and custom components to build dynamic and responsive web applications."
-        ]
-    },
+    Experience: [
+        {
+            startingMonth: "March",
+            endingMonth: "June",
+            year: 2024,
+            company: "Service Economy Applications INC – Alabang, Muntinlupa",
+            role: "Software Developer Intern",
+            bulletsData: [
+                "Developed and maintained backend services using Node.js and Express with TypeScript, implementing RESTful APIs, token-based authentication, and middleware for enhanced security and functionality.",
+    
+                "Utilized React with TypeScript, integrating React Hooks and custom components to build dynamic and responsive web applications."
+            ]
+        },
+    ],
 
     TechnicalSkills: [
         {
@@ -137,6 +153,46 @@ export const About: AboutTypes = {
             Experience: "6 months",
             Rating: 70
         },
+    ],
+
+    Hobbies: [
+        {
+            title: "Valorant",
+            url: process.env.NEXT_PUBLIC_VALORANT,
+        },
+        {
+            title: "Mobile Legends",
+            url: process.env.NEXT_PUBLIC_MOBILE_LEGENDS,
+        },
+        {
+            title: "Genshin Impact",
+            url: process.env.NEXT_PUBLIC_GENSHIN_IMAPACT,
+        },
+        {
+            title: "Tiktok",
+            url: process.env.NEXT_PUBLIC_TIKTOK,
+        },
+        {
+            title: "Yotube",
+            url: process.env.NEXT_PUBLIC_YOUTUBE,
+        },
+        {
+            title: "Facebook",
+            url: process.env.NEXT_PUBLIC_FACEBOOK,
+        },
+        {
+            title: "Spotify",
+            url: process.env.NEXT_PUBLIC_SPOTIFY,
+        },
+        {
+            title: "Discord",
+            url: process.env.NEXT_PUBLIC_DISCORD,
+        },
+        {
+            title: "Netflix",
+            url: process.env.NEXT_PUBLIC_NETFLIX,
+        },
+
     ]
 
 }

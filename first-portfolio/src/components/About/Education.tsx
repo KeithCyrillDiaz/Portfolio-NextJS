@@ -2,12 +2,12 @@
 
 import React from "react";
 import { Title } from "../Home/Information";
-import { H2 } from "../H2";
-import { About } from "@/lib/constant";
+import { H2 } from "../H_Tags";
+import { AboutData } from "@/lib/constant";
 import { CropImage } from "../ProfileImage";
 import { LoadingSpinner } from "../Loading";
 
-const {courseAndGPA, school, cumLaude, bestThesisCOS, bestThesisCourse} = About.Education
+const {courseAndGPA, school, cumLaude, bestThesisCOS, bestThesisCourse} = AboutData.Education
 const CumLaudeImage = process.env.NEXT_PUBLIC_CUM_LAUDE;
 const BestThesisCourse = process.env.NEXT_PUBLIC_COURSE;
 const BestThesisDepartment = process.env.NEXT_PUBLIC_COS;
@@ -41,7 +41,7 @@ const EducationImageContainer: React.FC<EducationImageContainerProps> = ({
     return(
         <div className="flex flex-col gap-4 items-center my-4 sm:w-[300px] xl:w-[300px] xl:h-[200px] fade-in">
             <CropImage className="rounded-[7px]" url={`${url}`} height={170} width={270}/>
-            <div className="text-white font-extrabold text-[14px] font-montserrat text-center">{children}</div>
+            <div className="text-white font-extrabold text-[14px] 2xl:text-[17px] font-montserrat text-center">{children}</div>
         </div>
     )
 }
