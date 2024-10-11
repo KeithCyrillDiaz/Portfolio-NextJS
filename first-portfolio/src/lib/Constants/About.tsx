@@ -1,4 +1,5 @@
-import { dateTypes } from "./types";
+import { dateTypes } from "../types";
+
 
 export type SkillLevel = "Intermediate" | "Beginner" | "Novice";
 
@@ -196,4 +197,5 @@ export const AboutData: AboutTypes = {
     ]
 
 }
+
 
