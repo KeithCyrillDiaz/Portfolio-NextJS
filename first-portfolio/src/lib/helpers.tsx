@@ -1,5 +1,5 @@
 import { TechnicalSkillTypes } from "./Constants/About";
-import { imageType } from "./Constants/Projects";
+import { imageType, MembersType } from "./Constants/Projects";
 
 
 
@@ -73,3 +73,17 @@ const getImageDimensions = (imageUrl: string): Promise<{ width: number, height: 
         return 
     }
   }
+
+
+  export const moveItemToAnotherIndex = (arrayData: MembersType[], targetIndex: number, itemName: string, property:keyof MembersType) => {
+    const result = arrayData.findIndex(data => data[property] === itemName);
+
+    //result > -1 check if the tiem is present inside the array
+    if (result > -1) {
+        const [newArray] = arrayData.splice(result, 1); 
+        // Insert it at index:targetIndex
+        arrayData.splice(targetIndex, 0, newArray);
+    }
+
+    return arrayData;
+};

@@ -1,24 +1,12 @@
 import { ChildrenClassNameProps, dateTypes } from "@/lib/types";
 import React from "react";
 import { Button } from "./Button";
-import { AboutData } from "@/lib/constant";
+
 import { Paragraph } from "./About/PersonalInformation";
 import { CustomH2} from "./H_Tags";
 import { CircleSVG } from "./Icons";
-
-
-type TimeLineCardProps = {
-    startingMonth: dateTypes;
-    endingMonth: dateTypes;
-    year: number;
-    company: string;
-    title?: string;
-    role?: string;
-    bulletData?: string[];
-    headerParagraph?: string;
-    appName?: string;
-}
-
+import { AboutData } from "@/lib/Constants/About";
+import { ProjectDataTypes, ProjectDetails } from "./ProjectDetails";
 
 
 const BulletForm: React.FC<ChildrenClassNameProps> = ({
@@ -33,6 +21,19 @@ const BulletForm: React.FC<ChildrenClassNameProps> = ({
     )
 }
 
+type TimeLineCardProps = {
+    startingMonth: dateTypes;
+    endingMonth: dateTypes;
+    year: number;
+    company?: string;
+    title?: string;
+    role?: string;
+    bulletData?: string[];
+    headerParagraph?: string;
+    projectData?: ProjectDataTypes;
+}
+
+
 export const TimeLineCard: React.FC<TimeLineCardProps> = ({
     startingMonth,
     endingMonth,
@@ -41,28 +42,40 @@ export const TimeLineCard: React.FC<TimeLineCardProps> = ({
     role,
     bulletData,
     headerParagraph,
+    projectData
 }) => {
     return (
-        <div className="mt-4 space-y-1">
+        <div className="mt-4">
            <Button className="text-white bg-defaultGray">{startingMonth} - {endingMonth} {year}</Button>
-           {company && <CustomH2 className="text-white text-[16px]">{company}</CustomH2>}
-           {role && <CustomH2 className="text-defaultGreen text-[16px]">{role}</CustomH2>}
-           {headerParagraph && <Paragraph>{headerParagraph}</Paragraph>}
-           {bulletData && (
-            <div className=" mx-2">
-                {bulletData.map((item, index) => (
-                    <BulletForm key={index}>{item}</BulletForm>
-                ))}
-            </div>
-           )}
+            {projectData ? (
+                // for Projects Timeline
+                <ProjectDetails data={projectData}/>
+            ) : (
+                //for experience timeline
+                <>
+                    {company && <CustomH2 className="text-white text-[16px] 2xl:text-[20px]">{company}</CustomH2>}
+                    {role && <CustomH2 className="text-defaultGreen text-[16px] 2xl:text-[20px]">{role}</CustomH2>}
+                    {headerParagraph && <Paragraph>{headerParagraph}</Paragraph>}
+                    {bulletData && (
+                        <div className=" mx-2">
+                            {bulletData.map((item, index) => (
+                                <BulletForm key={index}>{item}</BulletForm>
+                            ))}
+                        </div>
+                    )}
+                </>
+              
+            )}
+
+           
         </div>
     )
 }
 
-const TimeLineStick: React.FC = () => {
+export const TimeLineStick: React.FC = () => {
     return(
-        <div className=" relative w-[50px] flex flex-col items-center justify-center pt-2 mt-6 mr-2">
-            <div className="absolute top-0 left-0 xl:left-[11px]"><CircleSVG className="w-[50%] h-[50%]"/></div>
+        <div className=" flex flex-col items-center justify-center mt-6 w-[20px] sm:mr-2">
+            <div className="flex items-center justify-center ml-[14px] mb-[-1px] sm:ml-[18px] "><CircleSVG className="w-[50%] h-[50%]"/></div>
             <Stick/>
         </div>
     )
@@ -70,7 +83,7 @@ const TimeLineStick: React.FC = () => {
 
 const Stick: React.FC = () => {
     return (
-        <div className="bg-defaultGray h-full w-[4px] xl:w-[7px]"/>
+        <div className="bg-defaultGray h-full w-[4px] xl:w-[6px]"/>
     )
 }
 
@@ -78,7 +91,7 @@ export const TimeLine: React.FC = () => {
     const {Experience} = AboutData
     return(
        <>  
-          <div className="flex flex-row">
+          <div className="flex flex-row relative">
             <TimeLineStick/>
            <div className="flex flex-col">
            {Experience.map((item, index) => {

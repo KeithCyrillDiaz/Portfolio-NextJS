@@ -72,11 +72,11 @@ export const CropImage: React.FC<CropImageProps> = ({
                     alt={"Keith Diaz Profile Picture"}
                     width={height} 
                     height={width}
-                    layout={layout}  // Ensures responsive behavior
-                    objectFit="cover" 
+                    layout={layout} 
                     className={`${className ? className : "absolute top-3 left-3 h-full"} object-cover `} 
                     style={{ width: width, height: height }} // to remove warnings and nsure it scales proportionally
                     priority // Add this to improve load time for above-the-fold images 
+                    quality={100}
                 />
             </a>
             </div> 
