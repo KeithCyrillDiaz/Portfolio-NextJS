@@ -10,7 +10,7 @@ const HobbiesCards: React.FC = () => {
     return (
         <div className="flex flex-wrap items-center gap-x-2 justify-center ">
            {Hobbies.map((item, index) => (
-                <BoxWithLogo key={index} className="w-[160px] gap-3" url={`${item.url}`}>{item.title}</BoxWithLogo>
+                <BoxWithLogo key={index} className="w-[160px] xl:w-[200px] gap-3" url={`${item.url}`}>{item.title}</BoxWithLogo>
            ))}
 
         </div>

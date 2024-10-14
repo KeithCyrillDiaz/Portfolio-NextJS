@@ -94,7 +94,7 @@ const SkillCard: React.FC<SkillCardProp> = ({item, isDesktop}) => {
             </>
            ) : (
                 <>
-                <div className="flex flex-row w-[370px] items-center gap-x-4 mt-4">
+                <div className="flex flex-row w-[370px] 2xl:w-[500px] items-center gap-x-4 mt-4">
                     <BoxWithLogo url={`${item.url}`}>{item.title}</BoxWithLogo>
                     <SkillsInfo level={item.Level} experience={item.Experience}/>
                 </div>
@@ -122,7 +122,7 @@ export const SkillsComponent: React.FC = () => {
         {isMobile ? (
              <>
              {TechnicalSkills.map((item, index) => (
-                 <div key={index} className="flex flex-row items-center gap-4 justify-center">
+                 <div key={index} className="flex flex-row items-center gap-4 justify-center ">
                     {isFirstHalf(index, TechnicalSkills.length)&& (
                         <div className="flex flex-col w-[170px] relative my-2">
                          <SkillCard item={item}/>   
@@ -140,9 +140,9 @@ export const SkillsComponent: React.FC = () => {
          </>
         ) : isLandscape ? (
             <>
-                <div className="flex flex-wrap gap-y-4 w-[100wh] justify-between ">
+                <div className="flex flex-wrap gap-y-4 gap-x-7 justify-center">
                     {TechnicalSkills.map((item, index) => (
-                        <div key={index} className="flex flex-col w-[140px] relative">
+                        <div key={index} className="flex flex-col relative">
                             <SkillCard item={item} />
                         </div>
                     ))}
@@ -150,7 +150,7 @@ export const SkillsComponent: React.FC = () => {
                 </div>
             </>
         ) : (
-            <div className="flex flex-wrap gap-x-4 items-center justify-center">
+            <div className="flex flex-wrap gap-x-4 justify-center">
                     {TechnicalSkills.map((item, index) => (
                         <div key={index} className="flex flex-col relative ">
                             <SkillCard item={item} isDesktop/>
