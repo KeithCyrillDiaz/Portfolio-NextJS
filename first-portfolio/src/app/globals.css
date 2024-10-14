@@ -67,6 +67,30 @@
     }
 }
 
+@keyframes ModalSlideInFromBottom {
+  0% {
+      transform: translateY(100%); /* Start from the bottom */
+      opacity: 0; /* Start invisible */
+  }
+  100% {
+      transform: translateY(0%); /* End at the original position */
+      opacity: 1; /* Fully visible */
+  }
+}
+
+
+@keyframes ModalSlideOutFromTop {
+  0% {
+      transform: translateY(0%); /* Start from the top */
+      opacity: 1; /* Start invisible */
+  }
+  100% {
+      transform: translateY(100%); /* End at the original position */
+      opacity: 1; /* Fully visible */
+  }
+}
+
+
 @keyframes fadeIn {
     0% {
         opacity: 0; /* Start invisible */
@@ -93,10 +117,19 @@
     animation: slideInFromBottom 0.7s ease-in-out; /* Adjust duration and timing function as needed */
   }
 
+  .modal-in {
+    animation: ModalSlideInFromBottom 0.4s ease-in-out; /* Adjust duration and timing function as needed */
+  }
+
+  .modal-out {
+    animation: ModalSlideOutFromTop 0.4s ease-in-out; /* Adjust duration and timing function as needed */
+  }
+
 
   .fade-in {
     animation: fadeIn 0.5s ease-in; /* Adjust duration and timing function as needed */
 }
+
 
 .menu-in-animation {
     animation: menuInAnimation 0.3s ease-in-out;
