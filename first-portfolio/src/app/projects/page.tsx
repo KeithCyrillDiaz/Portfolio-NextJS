@@ -11,7 +11,7 @@ export default function Projects() {
       <Container>
         <Header focus='Projects'/>
         <TeamProjects/>
-        <Footer/>
+        <Footer focus='Projects'/>
       </Container>
     </BackgroundColor>
   )

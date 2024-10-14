@@ -1,5 +1,6 @@
 import { BackgroundColor } from "@/components/BackgroundColor";
 import { Container } from "@/components/Container";
+// import { Footer } from "@/components/footer";
 import { Header } from "@/components/Header";
 import { HomePageContent } from "@/components/Home/HomaPageContent";
 
