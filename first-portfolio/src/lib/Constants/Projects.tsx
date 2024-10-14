@@ -1,4 +1,4 @@
-import { TeamProjects } from "@/components/Projects/TeamProjects";
+
 import { dateTypes } from "../types"
 
 export type ProjectTypes = 'Thesis Project' | 'Personal Project'

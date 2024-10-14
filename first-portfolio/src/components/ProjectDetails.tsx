@@ -1,9 +1,8 @@
 
 import React from "react";
-import { imageType, ProjectTypes, TeamProjectsTypes, TechnologiesType, videoType } from "@/lib/Constants/Projects";
+import { TeamProjectsTypes, videoType } from "@/lib/Constants/Projects";
 import { CropImage } from "./ProfileImage";
 import { RenderTechnologies } from "./Projects/Technologies";
-import { CustomH2, H2 } from "./H_Tags";
 import { RenderMembers } from "./Projects/RenderMembers";
 
 export type ProjectDataTypes = Omit<TeamProjectsTypes, "startingMonth" | "endingMonth" | "MobileAndDesktop" | "year"> & { 
@@ -64,7 +63,7 @@ const RenderImagesLandscape: React.FC<RenderImagesProps>= ({imagesURL, label}) =
 }
 
 const VideoPresentation: React.FC<{video: videoType}> = ({video}) => {
-    const {videoThumbNailURL, videoURL, label} = video
+    const {videoThumbNailURL, label} = video
     return(
         <div className="mt-8 flex flex-col gap-y-2">
             <CropImage
@@ -101,11 +100,11 @@ export const ProjectDetails: React.FC<ProjectDetailsProps> = ({data}) => {
                    <>
                      {portrait ? (
                         //mobile screenshots
-                        <RenderImagesPortrait imagesURL={imagesURL} label={label}/>
+                        <RenderImagesPortrait key={index} imagesURL={imagesURL} label={label}/>
                      
                     ) : (
                          //Desktop screenshots
-                         <RenderImagesLandscape imagesURL={imagesURL} label={label}/>
+                         <RenderImagesLandscape key={index} imagesURL={imagesURL} label={label}/>
                     )}
                    </>
                 )

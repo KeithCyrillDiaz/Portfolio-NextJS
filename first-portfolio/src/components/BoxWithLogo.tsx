@@ -8,11 +8,9 @@ type BoxWithLogoProps = {
     url: string;
     children: React.ReactNode;
     className?: string;
-    height?: number;
-    width?: number;
 }
 
-export const BoxWithLogo: React.FC<BoxWithLogoProps> = ({url, children, className, height, width}) => {
+export const BoxWithLogo: React.FC<BoxWithLogoProps> = ({url, children, className}) => {
 
     const {windowSizeY} =useIsMobile()
     return (

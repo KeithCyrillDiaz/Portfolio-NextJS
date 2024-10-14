@@ -8,7 +8,6 @@ import { CropImage } from "../ProfileImage";
 import { useIsMobile } from "@/hooks/useMobileChecker";
 import { LoadingSpinner } from "../Loading";
 import { moveItemToAnotherIndex } from "@/lib/helpers";
-import { fileURLToPath } from "url";
 
 type MemberCardProp = {
     userData: MembersType;

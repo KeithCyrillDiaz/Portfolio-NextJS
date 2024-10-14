@@ -27,7 +27,7 @@ const getImageDimensions = (imageUrl: string): Promise<{ width: number, height: 
         });
       };
   
-      img.onerror = (error) => {
+      img.onerror = () => {
         reject(new Error("Failed to load image"));
       };
   
@@ -49,8 +49,8 @@ const getImageDimensions = (imageUrl: string): Promise<{ width: number, height: 
     try {
 
         console.log(images)
-        let portraitUrls: string[] = [];
-        let landscapeUrls: string[] = [];
+        const portraitUrls: string[] = [];
+        const landscapeUrls: string[] = [];
 
         for(const imageData of images){
             const {imagesURL} = imageData

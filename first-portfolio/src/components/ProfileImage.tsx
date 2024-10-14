@@ -4,8 +4,6 @@ import Image from "next/image";
 import React from "react";
 import dotenv from 'dotenv'
 import { LoadingSpinner } from "./Loading";
-import { Modal } from "./Modal";
-import { useAnimation } from "@/hooks/useAnimation";
 dotenv.config();
 
 type ProfileImageProp = {

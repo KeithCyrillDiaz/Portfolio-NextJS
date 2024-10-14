@@ -1,4 +1,3 @@
-import { ChildrenClassNameProps } from "@/lib/types";
 import React from "react";
 import { CloseComponent } from "./CloseComponent";
 
@@ -6,7 +5,7 @@ type ModalProps = {
     children: React.ReactNode;
     className?: string;
     onClick: () => void;
-    visible: Boolean
+    visible: boolean
 }
 
 export const Modal: React.FC<ModalProps> = ({children, className, onClick, visible}) => {
