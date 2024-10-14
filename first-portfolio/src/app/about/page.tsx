@@ -19,7 +19,7 @@ export default function About() {
         <TechnicalSkills/>
         <Experience/>
         <Hobbies/>
-        <Footer/>
+        <Footer focus='About'/>
       </Container>
     </BackgroundColor>
    

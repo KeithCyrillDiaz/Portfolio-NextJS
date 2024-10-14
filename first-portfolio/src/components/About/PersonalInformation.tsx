@@ -1,7 +1,7 @@
 import { ChildrenClassNameProps } from "@/lib/types";
 import React from "react";
 import { Title } from "../Home/Information";
-import { AboutData } from "@/lib/constant";
+import { AboutData } from "@/lib/Constants/About";
 import { AddressSVG, EmailSVG, PhoneSVG } from "../Icons";
 
 
