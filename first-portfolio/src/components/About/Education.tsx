@@ -3,7 +3,7 @@
 import React from "react";
 import { Title } from "../Home/Information";
 import { H2 } from "../H_Tags";
-import { AboutData } from "@/lib/constant";
+import { AboutData } from "@/lib/Constants/About";
 import { CropImage } from "../ProfileImage";
 import { LoadingSpinner } from "../Loading";
 

@@ -43,7 +43,7 @@ export const Menu = forwardRef<HTMLDivElement, MenuProps>(
             <div className="my-2 flex flex-col space-y-2">
                 <MenuButton focus={currentPage === "Home"} onClick={() => router.push('/')}>Home</MenuButton>
                 <MenuButton focus={currentPage === "About"} onClick={() => router.push('/about')}>About</MenuButton>
-                <MenuButton focus={currentPage === "Projects"} onClick={() => router.push('/project')}>Project</MenuButton>
+                <MenuButton focus={currentPage === "Projects"} onClick={() => router.push('/projects')}>Project</MenuButton>
             </div>
         </div>
     );

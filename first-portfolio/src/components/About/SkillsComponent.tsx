@@ -1,7 +1,7 @@
 
 "use client"
 
-import { AboutData, SkillLevel, TechnicalSkillTypes } from "@/lib/constant";
+import { AboutData, SkillLevel, TechnicalSkillTypes } from "@/lib/Constants/About";
 import React from "react";
 import { BoxWithLogo } from "../BoxWithLogo";
 import { useIsMobile } from "@/hooks/useMobileChecker";

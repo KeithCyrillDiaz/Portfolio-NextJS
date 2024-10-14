@@ -2,7 +2,7 @@
 import React from "react";
 import { Title } from "../Home/Information";
 import { BoxWithLogo } from "../BoxWithLogo";
-import { AboutData } from "@/lib/constant";
+import { AboutData } from "@/lib/Constants/About";
 
 
 const HobbiesCards: React.FC = () => {
