@@ -21,7 +21,7 @@ export const Container: React.FC<ContainerProps> = ({children, className}) => {
         )
     } else {
         return (
-            <div className={ `mx-40 2xl:mx-80 pt-4 ${className}`}>{children}</div> 
+            <div className={ `mx-20 pt-4 ${className}`}>{children}</div> 
         )
     }
     
