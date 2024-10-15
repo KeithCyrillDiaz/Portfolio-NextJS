@@ -10,7 +10,7 @@ export const Paragraph: React.FC<ChildrenClassNameProps> = ({
     className
 }) => {
     return(
-        <div className={`${className} font-montserrat font-light text-[12px] xl:text-[15px] 2xl:text-[19px] text-white text-justify`}>{children}</div>
+        <div className={`${className} font-montserrat font-light text-[12px] xl:text-[15px] 2xl:text-[17px] text-white text-justify`}>{children}</div>
     )
 }
 

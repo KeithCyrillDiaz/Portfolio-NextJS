@@ -32,8 +32,8 @@ export const HomePageContent: React.FC = () => {
                 <div className="flex flex-row space-x-32 items-center justify-center mt-20">
                     <Information/>
                     <ProfileImage 
-                    height={windowSizeY < 1600 ? 300 : windowSizeY < 1900 ? 400 : 500} 
-                    width={windowSizeY < 1600 ? 300 : windowSizeY < 1900 ? 400 : 500}/>
+                    height={windowSizeY < 1600 ? 300 : windowSizeY < 1900 ? 400 : 400} 
+                    width={windowSizeY < 1600 ? 300 : windowSizeY < 1900 ? 400 : 400}/>
                 </div>  
             ) }
             

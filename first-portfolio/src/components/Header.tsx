@@ -118,7 +118,7 @@ export const ButtonTabs: React.FC<ButtonTabsProps> = ({
     return (
         <button 
             onClick={onClick} 
-            className={`border-b-2 ${focus ? "border-b-defaultGreen text-defaultGreen" : "border-b-transparent text-white"} inline-block px-1 font-montserrat font-extrabold text-[17px] 2xl:text-[24px] hover:text-defaultGreen transition-all duration-200`}
+            className={`border-b-2 ${focus ? "border-b-defaultGreen text-defaultGreen" : "border-b-transparent text-white"} inline-block px-1 font-montserrat font-extrabold text-[17px] hover:text-defaultGreen transition-all duration-200`}
         >
             {children}
         </button>

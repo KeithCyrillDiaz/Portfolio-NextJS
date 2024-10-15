@@ -15,7 +15,7 @@ type ProjectDetailsProps = {
 
 const Label: React.FC<{children: React.ReactNode}> = ({children}) => {
     return(
-        <div className="text-white font-montserrat font-light text-[12px] 2xl:text-[20px] text-center">
+        <div className="text-white font-montserrat font-light text-[12px] 2xl:text-[17px] text-center">
             {children}
         </div>
     )
@@ -85,13 +85,13 @@ export const ProjectDetails: React.FC<ProjectDetailsProps> = ({data}) => {
 
     return(
         <div className="ml-2 mt-2">
-            <div className="text-white font-montserrat font-extrabold text-[12px] 2xl:text-[20px]">
+            <div className="text-white font-montserrat font-extrabold text-[12px] 2xl:text-[17px]">
                 {projectType}
             </div>
-            <div className="text-white font-montserrat font-extrabold text-[12px] 2xl:text-[20px] italic">
+            <div className="text-white font-montserrat font-extrabold text-[12px] 2xl:text-[17px] italic">
                 <span className="text-defaultGreen">{appName}: </span>{projectDetails}
             </div>
-            <div className="text-white font-montserrat font-light text-[12px] 2xl:text-[20px] text-justify mt-4">
+            <div className="text-white font-montserrat font-light text-[12px] 2xl:text-[17px] text-justify mt-4">
                 {introduction}
             </div>
             {images.map((item, index) => {
