@@ -33,7 +33,7 @@ export type TeamProjectsTypes = {
     startingMonth: dateTypes;
     endingMonth: dateTypes;
     MobileAndDesktop: boolean;
-    MobileAppPorject?: boolean;
+    MobileAppProject?: boolean;
     year: number
     projectType: ProjectTypes;
     appName: string;
