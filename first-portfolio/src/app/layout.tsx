@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 
-const profileImageURL = process.env.NEXT_PUBLIC_DP_URL
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -19,7 +18,7 @@ export const metadata: Metadata = {
   title: "Keith Diaz Portfolio",
   description: "Keith Diaz - A passionate Full Stack Developer specializing in JavaScript and TypeScript frameworks with expertise in mobile and web development.",
   keywords: "Keith Diaz, Keith Cyrill Diaz, Full Stack Developer, JavaScript, TypeScript, React, Node.js, Portfolio",
-  authors: [{ name: "Keith Diaz", url: "https://keithdiaz.vercel.app/" }],
+  authors: [{ name: "Keith Cyrill A. Diaz", url: "https://keithdiaz.vercel.app/" }],
   openGraph: {
     url: "https://keithdiaz.vercel.app/",
     title: "Keith Diaz - Full Stack Developer",
@@ -27,9 +26,9 @@ export const metadata: Metadata = {
     siteName: "Keith Diaz Portfolio",
     images: [
       {
-        url: profileImageURL as string,
-        width: 1200,
-        height: 630,
+        url: "https://firebasestorage.googleapis.com/v0/b/portfolio-keith.appspot.com/o/Profile%20Image%2FDiaz%2C%20Keith%20Cyrill%20A.jpg?alt=media&token=1a585aab-91ee-4d1e-85cd-4cb0e4d2f038",
+        width: 630,
+        height: 1200,
         alt: "Keith Diaz Portfolio",
       },
     ],

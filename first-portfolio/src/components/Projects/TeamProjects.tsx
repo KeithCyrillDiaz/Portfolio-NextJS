@@ -8,11 +8,11 @@ export const TeamProjects: React.FC = () => {
 
     const {TeamProjects} = ProjectsData
     return(
-        <>
+        <div className="sm:mx-7 2xl:mx-12">
           <Title className="text-defaultGreen slide-in-from-left">Team Projects</Title>
           <div className="flex flex-row team-project-in">
           <TimeLineStick/>
-          <div className="w-[97%]">
+          <>
           {TeamProjects.map((item, index) =>{
                 const {
                     startingMonth, 
@@ -47,11 +47,11 @@ export const TeamProjects: React.FC = () => {
                     />
                 )
             })}
-          </div>
+          </>
           
           </div>
     
           
-        </>
+        </div>
     )
 }
