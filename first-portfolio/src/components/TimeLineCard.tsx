@@ -91,7 +91,7 @@ export const TimeLine: React.FC = () => {
     const {Experience} = AboutData
     return(
        <>  
-          <div className="flex flex-row relative">
+          <div className="flex flex-row relative slide-in-from-bottom">
             <TimeLineStick/>
            <div className="flex flex-col">
            {Experience.map((item, index) => {
