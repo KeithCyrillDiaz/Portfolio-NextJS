@@ -8,7 +8,7 @@ import { Button } from "../Button";
 export const Information: React.FC = () => {
     return(
         <div className="flex flex-col slide-in-from-bottom pl-6">
-            <Title>Keith Diaz</Title>
+            <Title className="text-white 2xl:text-[50px]">Keith Diaz</Title>
             <SubTitle>Full Stack Developer | Mobile & Web Developer</SubTitle>
             <SubInfo>Passionate <span className="text-defaultGreen font-bold">Developer</span> from the Philippines</SubInfo>
             <div className="flex flex-row gap-2 mt-4">
@@ -45,7 +45,7 @@ type TitleProps = {
 }
 export const Title: React.FC<TitleProps> = ({children, className}) => {
     return(
-        <div className={`${className ? className : "text-white"} inline-block font-montserrat font-extrabold text-[30px] xl:text-[40px] 2xl:text-[50px]`}>{children}</div>
+        <div className={`${className ? className : "text-white 2xl:text-[35px]"} inline-block font-montserrat font-extrabold text-[25px] xl:text-[30px] `}>{children}</div>
     )
 }
 

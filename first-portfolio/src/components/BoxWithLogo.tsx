@@ -14,7 +14,7 @@ export const BoxWithLogo: React.FC<BoxWithLogoProps> = ({url, children, classNam
 
     const {windowSizeY} =useIsMobile()
     return (
-        <div className={`${className ? className : "gap-4 xl:w-[350px] 2xl:w-full sm:w-[170px]"} mb-1  xl:mb-2  2xl:text-[20px] sm:items-center flex flex-row bg-defaultGray items-center rounded-[7px] text-white font-montserrat text-[13px] font-extrabold`}>
+        <div className={`${className ? className : "gap-4 xl:w-[350px] 2xl:w-full sm:w-[170px] text-[13px]"} mb-1  xl:mb-2  2xl:text-[14px] sm:items-center flex flex-row bg-defaultGray items-center rounded-[7px] text-white font-montserrat font-extrabold`}>
            { url ?  (
                  <CropImage
                  className={`${children=== "Facebook" ? "rounded-[25px]" : "rounded-[7px]"}`}
