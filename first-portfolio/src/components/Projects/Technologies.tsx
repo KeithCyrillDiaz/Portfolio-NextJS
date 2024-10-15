@@ -50,13 +50,13 @@ export const RenderTechnologies: React.FC<{technologies: TechnologiesType}> = ({
     const {frontEnd, backEnd} = technologies
 
     return(
-       <>
-        <CustomH2 className="text-defaultGreen text-[18px] mt-7 xl:text-[24px]">Technologies</CustomH2>
-        <CustomH2 className="mt-4 text-white text-[14px] mb-2 xl:text-[20px] sm:ml-4">Frontend</CustomH2>
-        <RenderCards techs={frontEnd}/>
-        <CustomH2 className="mt-4 text-white text-[14px] mb-2 xl:text-[20px] sm:ml-4">Backend</CustomH2>
-        <RenderCards techs={backEnd}/>
-    </>
+       <div className="slide-in-from-bottom">
+            <CustomH2 className="text-defaultGreen text-[18px] mt-7 xl:text-[24px]">Technologies</CustomH2>
+            <CustomH2 className="mt-4 text-white text-[14px] mb-2 xl:text-[20px] sm:ml-4">Frontend</CustomH2>
+            <RenderCards techs={frontEnd}/>
+            <CustomH2 className="mt-4 text-white text-[14px] mb-2 xl:text-[20px] sm:ml-4">Backend</CustomH2>
+            <RenderCards techs={backEnd}/>
+        </div>
             
     )
 }

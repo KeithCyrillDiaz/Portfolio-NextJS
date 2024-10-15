@@ -8,7 +8,7 @@ import { AboutData } from "@/lib/Constants/About";
 const HobbiesCards: React.FC = () => {
     const {Hobbies} = AboutData
     return (
-        <div className="flex flex-wrap items-center gap-x-2 justify-center ">
+        <div className="flex flex-wrap items-center gap-x-2 justify-center slide-in-from-bottom">
            {Hobbies.map((item, index) => (
                 <BoxWithLogo key={index} className="w-[160px] xl:w-[200px] gap-3" url={`${item.url}`}>{item.title}</BoxWithLogo>
            ))}
@@ -22,7 +22,7 @@ const HobbiesCards: React.FC = () => {
 export const Hobbies: React.FC = () => {
     return (
         <>
-            <Title className="mt-4 text-defaultGreen">Hobbies</Title>
+            <Title className="mt-4 text-defaultGreen slide-in-from-left">Hobbies</Title>
             <HobbiesCards/>
         </>
     )

@@ -9,8 +9,8 @@ export const TeamProjects: React.FC = () => {
     const {TeamProjects} = ProjectsData
     return(
         <>
-          <Title className="text-defaultGreen">Team Projects</Title>
-          <div className="flex flex-row ">
+          <Title className="text-defaultGreen slide-in-from-left">Team Projects</Title>
+          <div className="flex flex-row team-project-in">
           <TimeLineStick/>
           <div className="w-[97%]">
           {TeamProjects.map((item, index) =>{

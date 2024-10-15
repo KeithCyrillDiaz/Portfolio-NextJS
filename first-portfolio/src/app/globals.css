@@ -99,7 +99,21 @@
         opacity: 1; /* Fully visible */
     }
 }
-  
+@keyframes projectSlideInFromBottom {
+  0% {
+      transform: translateY(7%); /* Start from the top */
+      opacity: 0; /* Start invisible */
+  }
+  100% {
+      transform: translateX(0%); /* End at the original position */
+      opacity: 1; /* Fully visible */
+  }
+}
+
+.team-project-in {
+  animation: projectSlideInFromBottom 1s ease-in-out; /* Adjust duration and timing function as needed */
+}
+
   
   .slide-in-from-right {
     animation: slideInFromRight 0.7s ease-in-out; /* Adjust duration and timing function as needed */
