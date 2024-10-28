@@ -1,5 +1,8 @@
 import { dateTypes } from "./types";
 
+export const API_BASE_URL = process.env.NEXT_PUBLIC_BASE_URL_LOCAL;
+export const token = process.env.NEXT_PUBLIC_BACKEND_TOKEN;
+
 export type SkillLevel = "Intermediate" | "Beginner" | "Novice";
 
 export type TechnicalSkillTypes = {
@@ -7,7 +10,7 @@ export type TechnicalSkillTypes = {
     url: string | undefined;
     Level: SkillLevel;
     Experience: string;
-    Rating: number
+    projects: string[];
 }
 
 export type ExperienceTypes = {
@@ -92,7 +95,7 @@ export const AboutData: AboutTypes = {
             url: process.env.NEXT_PUBLIC_TS,
             Level: "Intermediate",
             Experience: "6 months",
-            Rating: 75
+            projects: ["Kalinga App"]
         },
         
         {
@@ -100,7 +103,7 @@ export const AboutData: AboutTypes = {
             url: process.env.NEXT_PUBLIC_HTML,
             Level: "Intermediate",
             Experience: "8 months",
-            Rating: 75
+            projects: ["Kalinga App"]
             
         },
         {
@@ -108,7 +111,7 @@ export const AboutData: AboutTypes = {
             url: process.env.NEXT_PUBLIC_TAILWIND,
             Level: "Beginner",
             Experience: "3 months",
-            Rating: 60
+            projects: ["Kalinga App"]
         },
        
         {
@@ -116,42 +119,42 @@ export const AboutData: AboutTypes = {
             url: process.env.NEXT_PUBLIC_REACT,
             Level: "Beginner",
             Experience: "3 months",
-            Rating: 70
+            projects: ["Kalinga App"]
         },
         {
             title: "Next.js",
             url: process.env.NEXT_PUBLIC_NEXT,
             Level: "Novice",
             Experience: "1 month",
-            Rating: 70
+            projects: ["Kalinga App"]
         },
          {
             title: "JavaScript",
             url: process.env.NEXT_PUBLIC_JS,
             Level: "Intermediate",
             Experience: "6 months",
-            Rating: 70
+            projects: ["Kalinga App"]
         },
         {
             title: "Node.js",
             url: process.env.NEXT_PUBLIC_NODE,
             Level: "Intermediate",
             Experience: "6 months",
-            Rating: 70
+            projects: ["Kalinga App"]
         },
         {
             title: "Express.js",
             url: process.env.NEXT_PUBLIC_EXPRESS,
             Level: "Intermediate",
             Experience: "6 months",
-            Rating: 70
+            projects: ["Kalinga App"]
         },
         {
             title: "React Native",
             url: process.env.NEXT_PUBLIC_NATIVE,
             Level: "Intermediate",
             Experience: "6 months",
-            Rating: 70
+            projects: ["Kalinga App"]
         },
     ],
 
