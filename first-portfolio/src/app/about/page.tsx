@@ -1,3 +1,4 @@
+import { fetchTechnicalSkills, fetchTechnicalSkillsType } from '@/API/TechnicalSkills'
 import { AboutMe } from '@/components/About/AboutMe'
 import { Education } from '@/components/About/Education'
 import { Experience } from '@/components/About/Experience'
@@ -7,16 +8,28 @@ import { BackgroundColor } from '@/components/BackgroundColor'
 import { Container } from '@/components/Container'
 import { Footer } from '@/components/footer'
 import { Header } from '@/components/Header'
-import React from 'react'
+import { LoadingSpinner } from '@/components/Loading'
 
-export default function About() {
+
+
+export default async function About() {
+
+  let skills: fetchTechnicalSkillsType | undefined;
+  try {
+    skills  = await fetchTechnicalSkills()
+
+  } catch (error) {
+    console.error("Error fetching technical skills:", error);
+    skills
+  }
+
   return (
     <BackgroundColor>
        <Container>
         <Header focus='About'/>
         <AboutMe/>
         <Education/>
-        <TechnicalSkills/>
+        {!skills ? <LoadingSpinner/> : <TechnicalSkills skills = {skills.result}/>}
         <Experience/>
         <Hobbies/>
         <Footer focus='About'/>

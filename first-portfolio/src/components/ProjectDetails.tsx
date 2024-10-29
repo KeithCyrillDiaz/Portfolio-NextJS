@@ -63,14 +63,14 @@ const RenderImagesLandscape: React.FC<RenderImagesProps>= ({imagesURL, label}) =
 }
 
 const VideoPresentation: React.FC<{video: videoType}> = ({video}) => {
-    const {videoThumbNailURL, label} = video
+    const {videoThumbNailURL, videoURL, label} = video
     return(
         <div className="mt-8 flex flex-col gap-y-2">
             <CropImage
             layout="responsive" 
             height={170} width={300} 
             url={`${videoThumbNailURL}`} 
-            videoURL={`https://firebasestorage.googleapis.com/v0/b/portfolio-keith.appspot.com/o/Projects%2FTeamProjects%2FKalinga%20App%2FBSIS%204A%20-%20KALINGA%20APP%20%20(2).mp4?alt=media&token=7217af9c-6016-490b-9f2e-a17a4e2a3a3c`}
+            videoURL={`${videoURL}`}
             className="w-ful h-full rounded-[4px]"/>
             <Label>{label}</Label>
         </div>
@@ -82,7 +82,6 @@ const VideoPresentation: React.FC<{video: videoType}> = ({video}) => {
 export const ProjectDetails: React.FC<ProjectDetailsProps> = ({data}) => {
 
     const {projectDetails, projectType, appName, introduction, images, video, Technologies, Members} = data
-
     return(
         <div className="ml-2 mt-2">
             <div className="text-white font-montserrat font-extrabold text-[12px] 2xl:text-[17px]">
@@ -96,8 +95,9 @@ export const ProjectDetails: React.FC<ProjectDetailsProps> = ({data}) => {
             </div>
             {images.map((item, index) => {
                 const {imagesURL, label, portrait} = item
+          
                 return(
-                   <>
+                   <div key={index}>
                      {portrait ? (
                         //mobile screenshots
                         <RenderImagesPortrait key={index} imagesURL={imagesURL} label={label}/>
@@ -106,7 +106,7 @@ export const ProjectDetails: React.FC<ProjectDetailsProps> = ({data}) => {
                          //Desktop screenshots
                          <RenderImagesLandscape key={index} imagesURL={imagesURL} label={label}/>
                     )}
-                   </>
+                   </div>
                 )
             })} 
             <VideoPresentation video={video}/>

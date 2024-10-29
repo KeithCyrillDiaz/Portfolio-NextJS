@@ -66,7 +66,7 @@ export const CropImage: React.FC<CropImageProps> = ({
             <div className="relative h-[85%] sm:h-[100%] lg:h-[100%]">
             <a href={videoURL ?? url} target="_blank" rel="noopener noreferrer">
                 <Image
-                    src={`${url}`}     
+                    src={url}     
                     alt={"Keith Diaz Profile Picture"}
                     width={height} 
                     height={width}

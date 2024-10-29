@@ -1,12 +1,13 @@
 import React from "react";
 import { TimeLineCard, TimeLineStick } from "../TimeLineCard";
-import { ProjectsData } from "@/lib/Constants/Projects";
+import { TeamProjectsTypes } from "@/lib/Constants/Projects";
 import { Title } from "../Home/Information";
 
 
-export const TeamProjects: React.FC = () => {
+export const TeamProjects: React.FC<{data: TeamProjectsTypes[]}> = ({data}) => {
 
-    const {TeamProjects} = ProjectsData
+    const TeamProjects = data
+    // const {TeamProjects} = ProjectsData
     return(
         <div className="sm:mx-7 2xl:mx-12">
           <Title className="text-defaultGreen slide-in-from-left">Team Projects</Title>
@@ -27,7 +28,6 @@ export const TeamProjects: React.FC = () => {
                     Technologies,
                     Members
                 } = item
-
                 return (
                     <TimeLineCard 
                     key={index} 

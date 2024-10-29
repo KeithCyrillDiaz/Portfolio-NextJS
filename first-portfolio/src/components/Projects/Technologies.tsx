@@ -13,11 +13,11 @@ const RenderCards: React.FC<{techs: string[]}> = ({techs}) => {
     const technologiesMap: TechnologiesMapType = {
         "JavaScript": process.env.NEXT_PUBLIC_JS,
         "TypeScript": process.env.NEXT_PUBLIC_TS,
-        "React": process.env.NEXT_PUBLIC_REACT,
+        "React.js": process.env.NEXT_PUBLIC_REACT,
         "React Native": process.env.NEXT_PUBLIC_NATIVE,
-        "Express": process.env.NEXT_PUBLIC_EXPRESS,
-        "Next": process.env.NEXT_PUBLIC_NEXT,
-        "Node": process.env.NEXT_PUBLIC_NODE,
+        "Express.js": process.env.NEXT_PUBLIC_EXPRESS,
+        "Next.js": process.env.NEXT_PUBLIC_NEXT,
+        "Node.js": process.env.NEXT_PUBLIC_NODE,
         "HTML": process.env.NEXT_PUBLIC_HTML,
         "Tailwind": process.env.NEXT_PUBLIC_TAILWIND,
         "Axios": process.env.NEXT_PUBLIC_AXIOS,
@@ -31,7 +31,7 @@ const RenderCards: React.FC<{techs: string[]}> = ({techs}) => {
             <div className="flex flex-wrap gap-x-2 xl:gap-x-16  items-center xl:w-[100%] ">
                 {techs.map((tech, index) => (
                     <BoxWithLogo 
-                    className="w-[145px] sm:w-[150px] gap-x-4 xl:w-[250px] 2xl:w-[300px]"
+                    className="w-[145px] sm:w-[150px] gap-x-4 xl:w-[250px] 2xl:w-[300px] text-[13px]"
                     key={index} 
                     url={`${tech === "Firebase Storage" ?technologiesMap["Firebase"] : technologiesMap[tech]}`}
                     >
