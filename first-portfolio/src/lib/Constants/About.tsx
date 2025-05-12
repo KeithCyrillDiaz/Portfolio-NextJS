@@ -8,7 +8,7 @@ export type TechnicalSkillTypes = {
     url: string | undefined;
     Level: SkillLevel;
     Experience: string;
-    Rating: number
+    projects: string[];
 }
 
 export type ExperienceTypes = {
@@ -60,7 +60,7 @@ export const AboutData: AboutTypes = {
         ],
         contactNumber: "+63 976-532-9159",
         email: "keithalbarinadiaz0317@gmail.com",
-        address: "33 Julio’s Compound Pulang Lupa Uno Las Pinas City",
+        address: "Las Pinas City, Philippines",
         lastParagraph: "I was first exposed to technology at age four, which ignited my passion for technologies. This interest grew during my college years, leading me to pursue a degree in Information Systems. Throughout my studies, I gained hands-on experience in full-stack development during my thesis project. I thrive in collaborative environments where I can contribute to meaningful projects and grow both personally and professionally while aiming to make a positive impact in the tech industry."
     },
 
@@ -93,7 +93,7 @@ export const AboutData: AboutTypes = {
             url: process.env.NEXT_PUBLIC_TS,
             Level: "Intermediate",
             Experience: "6 months",
-            Rating: 75
+            projects: ["Kalinga App"]
         },
         
         {
@@ -101,7 +101,7 @@ export const AboutData: AboutTypes = {
             url: process.env.NEXT_PUBLIC_HTML,
             Level: "Intermediate",
             Experience: "8 months",
-            Rating: 75
+            projects: ["Kalinga App"]
             
         },
         {
@@ -109,7 +109,7 @@ export const AboutData: AboutTypes = {
             url: process.env.NEXT_PUBLIC_TAILWIND,
             Level: "Beginner",
             Experience: "3 months",
-            Rating: 60
+            projects: ["Kalinga App"]
         },
        
         {
@@ -117,42 +117,42 @@ export const AboutData: AboutTypes = {
             url: process.env.NEXT_PUBLIC_REACT,
             Level: "Beginner",
             Experience: "3 months",
-            Rating: 70
+            projects: ["Kalinga App"]
         },
         {
             title: "Next.js",
             url: process.env.NEXT_PUBLIC_NEXT,
             Level: "Novice",
             Experience: "1 month",
-            Rating: 70
+            projects: ["Kalinga App"]
         },
          {
             title: "JavaScript",
             url: process.env.NEXT_PUBLIC_JS,
             Level: "Intermediate",
             Experience: "6 months",
-            Rating: 70
+            projects: ["Kalinga App"]
         },
         {
             title: "Node.js",
             url: process.env.NEXT_PUBLIC_NODE,
             Level: "Intermediate",
             Experience: "6 months",
-            Rating: 70
+            projects: ["Kalinga App"]
         },
         {
             title: "Express.js",
             url: process.env.NEXT_PUBLIC_EXPRESS,
             Level: "Intermediate",
             Experience: "6 months",
-            Rating: 70
+            projects: ["Kalinga App"]
         },
         {
             title: "React Native",
             url: process.env.NEXT_PUBLIC_NATIVE,
             Level: "Intermediate",
             Experience: "6 months",
-            Rating: 70
+            projects: ["Kalinga App"]
         },
     ],
 
@@ -197,5 +197,4 @@ export const AboutData: AboutTypes = {
     ]
 
 }
-
 

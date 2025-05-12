@@ -13,23 +13,6 @@ type MemberCardProp = {
     userData: MembersType;
     layout?: "responsive"
 }
-// const MemberCard: React.FC<MemberCardProp> = ({userData, layout}) => {
-//     const {fullName, linkedInURL, profileImageURL, role} = userData
-//     return(
-//         <div className="bg-defaultGray w-[140px] sm:w-[200px] sm:py-4 xl:w-[200px] xl:h-[200px] py-2 rounded-[7px] items-center flex flex-col justify-center overflow-hidden">
-//             <CropImage
-//             height={120}
-//             width={120}
-//             className="rounded-[7px]"
-//             url={`${profileImageURL}`}
-//             videoURL={`${linkedInURL}`}
-//             layout={layout}
-//             />
-//             <CustomH2 className="text-white text-[10px] mt-4">{fullName}</CustomH2>
-//             <CustomH2 className="text-defaultGreen text-[10px] text-center pb-1">{role} </CustomH2>
-//         </div>
-//     )
-// }
 
 const MemberCard: React.FC<MemberCardProp> = ({userData, layout}) => {
     const {fullName, linkedInURL, profileImageURL, role} = userData
@@ -77,9 +60,11 @@ const MemberCardForPC: React.FC<MemberCardProp> = ({userData, layout}) => {
 export const RenderMembers: React.FC<{memberData: MembersType[]}> = ({memberData}) => {
 
     const {isLandscape, isMobile, status} = useIsMobile()
+    console.log("memberData: ", memberData)
     const filteredMembers: MembersType[] = [...memberData]
     //to put KeithDiaz in middle for landscape mobile
     moveItemToAnotherIndex(filteredMembers, 1, "Keith Cyrill A. Diaz", "fullName")
+    console.log("filteredMembers: ", filteredMembers)
     if(status==="loading"){
         return(
             <LoadingSpinner/>
