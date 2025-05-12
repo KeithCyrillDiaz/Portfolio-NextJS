@@ -31,11 +31,11 @@ const RenderCards: React.FC<{techs: string[]}> = ({techs}) => {
             <div className="flex flex-wrap gap-x-2 xl:gap-x-16  items-center xl:w-[100%] ">
                 {techs.map((tech, index) => (
                     <BoxWithLogo 
-                    className="w-[145px] sm:w-[150px] gap-x-4 xl:w-[250px] 2xl:w-[300px] text-[13px]"
+                    className=" w-[146px] sm:w-[150px] gap-x-4 xl:w-[250px] 2xl:w-[300px] text-[13px]"
                     key={index} 
                     url={`${tech === "Firebase Storage" ?technologiesMap["Firebase"] : technologiesMap[tech]}`}
                     >
-                        {tech === "Firebase Storage" ? "Firebase" : tech}
+                        {tech}
                     </BoxWithLogo>
                 ))}
             </div>
