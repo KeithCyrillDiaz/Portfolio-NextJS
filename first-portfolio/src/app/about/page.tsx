@@ -20,7 +20,7 @@ export default async function About() {
 
   } catch (error) {
     console.error("Error fetching technical skills:", error);
-    skills
+    skills = undefined;
   }
 
   return (
