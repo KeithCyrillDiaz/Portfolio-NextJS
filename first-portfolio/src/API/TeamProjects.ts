@@ -12,6 +12,8 @@ export type fetchTeamProjectsType = {
 
 export const fetchTeamProjects = async (): Promise<fetchTeamProjectsType | undefined> => {
     try {
+
+        console.log("Fetching Projects");
         const response = await axios.get(`${API_BASE_URL}/PortfolioBackend/fetchTeamProjects`, {
             headers: {
                 Authorization: `Bearer ${token}`
