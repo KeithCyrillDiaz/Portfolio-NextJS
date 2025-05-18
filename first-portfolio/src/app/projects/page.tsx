@@ -16,7 +16,7 @@ export default async function Projects() {
     console.log("team projects: ", teamProjects)
   } catch (error) {
     console.error("Error fetching technical skills:", error);
-    teamProjects
+    teamProjects = undefined;
   }
 
   return (
