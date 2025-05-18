@@ -59,12 +59,10 @@ const MemberCardForPC: React.FC<MemberCardProp> = ({userData, layout}) => {
 
 export const RenderMembers: React.FC<{memberData: MembersType[]}> = ({memberData}) => {
 
-    const {isLandscape, isMobile, status} = useIsMobile()
-    console.log("memberData: ", memberData)
-    const filteredMembers: MembersType[] = [...memberData]
+    const {isLandscape, isMobile, status} = useIsMobile();
+    const filteredMembers: MembersType[] = [...memberData];
     //to put KeithDiaz in middle for landscape mobile
     moveItemToAnotherIndex(filteredMembers, 1, "Keith Cyrill A. Diaz", "fullName")
-    console.log("filteredMembers: ", filteredMembers)
     if(status==="loading"){
         return(
             <LoadingSpinner/>
